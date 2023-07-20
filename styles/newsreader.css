@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 100;
+  font-display: block;
+  src: url(../public/fonts/newsreader/Newsreader_36pt-ExtraLightItalic.ttf)
+    format('ttf');
+}
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 200;
+  font-display: block;
+  src: url(../public/fonts/newsreader/Newsreader_36pt-LightItalic.ttf)
+    format('ttf');
+}
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 300;
+  font-display: block;
+  src: url(../public/fonts/newsreader/Newsreader_36pt-MediumItalic.ttf)
+    format('ttf');
+}
+@font-face {
+  font-family: 'Newsreader';
+  font-style: italic;
+  font-weight: 400;
+  font-display: block;
+  src: url(../public/fonts/newsreader/Newsreader_36pt-SemiBoldItalic.ttf)
+    format('ttf');
+}

@@ -2,14 +2,14 @@ import NextHead from 'next/head'
 import { useTheme } from 'next-themes'
 import { useRouter } from 'next/router'
 
-const BASE_URL = `https://paco.sh`
+const BASE_URL = `https://sboro.vercel.app`
 const defaultOgImage =
   'https://res.cloudinary.com/dsdlhtnpw/image/upload/v1572673557/og-image_budbm8.png'
-const useCurrentPath = () => useRouter().asPath.split("?")[0];
+const useCurrentPath = () => useRouter().asPath.split('?')[0]
 
 const Head = ({
-  title = 'Paco Coursey',
-  description = "Hi, I'm Paco. Frontend developer and designer.",
+  title = 'Sintu Boro',
+  description = "Hi, I'm Boro. Full-stack developer, designer, and tech writer.",
   image = defaultOgImage,
   children
 }) => {
@@ -40,9 +40,8 @@ const Head = ({
       <meta name="og:image" content={image} />
 
       {/* URL */}
-      <meta name="og:url" content="https://paco.sh" />
+      <meta name="og:url" content="https://sboro.vercel.app" />
       <link key="canonical" rel="canonical" href={BASE_URL + path} />
-
 
       {/* General */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -50,7 +49,7 @@ const Head = ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@pacocoursey" />
       <meta name="apple-mobile-web-app-title" content="Paco" />
-      <meta name="author" content="Paco Coursey" />
+      <meta name="author" content="Sintu Boro" />
 
       {/* RSS feed */}
       <link

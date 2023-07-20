@@ -3,32 +3,54 @@ import Link from '@components/link'
 
 const About = () => {
   return (
-    <Page description="Hi, I'm Paco. Frontend developer and designer, mechanical keyboard enthusiast, practicing minimalist, and trance lover in search of flow.">
+    <Page description="I'm Boro, a software designer and developer based in Madison, WI. I build web applications with high-impact user experience, and also write about interesting technologies.">
       <article>
-        <h1>Paco Coursey</h1>
+        <div>
+          <h1>Sintu Boro</h1>
+          <p>
+            <em>Building experiences.</em> I'm Boro, a software designer and
+            developer. I build web applications with a focus on performance,
+            user-centric design, and high-impact user experience.{' '}
+          </p>
 
-        <p>
-          Frontend developer and designer,{' '}
-          <Link underline href="/keyboards">
-            mechanical keyboard
-          </Link>{' '}
-          enthusiast, practicing minimalist, and{' '}
-          <Link underline href="/music">
-            trance lover
-          </Link>{' '}
-          in search of flow.{' '}
-          <Link underline href="/blog">
-            Writing
-          </Link>{' '}
-          about design and code.
-        </p>
+          <p>
+            I{' '}
+            <Link underline href="/blog">
+              write
+            </Link>{' '}
+            technical blogs primarily focused on full-stack development. My
+            posts often delve into front-end technologies providing valuable
+            insights and information.
+          </p>
+        </div>
 
+        <div>
+          <h1>Now</h1>
+          <p>
+            Self-motivated developer with over three years of experience in
+            full-stack web development. I have previously built and delivered{' '}
+            <em>highly performant, design-centric</em> web applications with
+            excellent user experiences.
+          </p>
+          <p>
+            Currently teaming up with{' '}
+            <Link underline href="https://wavedds.com" external>
+              Wave DDS
+            </Link>{' '}
+            to make swimming safer.
+          </p>
+        </div>
+
+        <h1>Connect</h1>
         <p>
-          Working with{' '}
-          <Link underline href="https://vercel.com" external>
-            ▲ Vercel
+          Reach me at{' '}
+          <Link underline href="https://linkedin.com/in/sintu-boro" external>
+            boro@linkedin
           </Link>{' '}
-          to build better ways to deploy websites.
+          or{' '}
+          <Link underline href="https://twitter.com/sdotboro" external>
+            boro@twitter.
+          </Link>{' '}
         </p>
       </article>
     </Page>

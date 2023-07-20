@@ -43,9 +43,9 @@ const Post = ({
 
       <article
         dangerouslySetInnerHTML={{
-          __html: `<span class="${styles.date}">${date}</span><h1 class="${
+          __html: `<span class="${styles.date}">${date}</span><h2 class="${
             styles.title
-          }">${escapeHtml(title)}</h1>${html}`
+          }">${escapeHtml(title)}</h2>${html}`
         }}
       />
 

@@ -16,22 +16,16 @@ import {
 
 import {
   Command as CommandIcon,
-  Sparkles,
   Pencil,
   Search,
   RSS,
-  Design,
-  M6,
   Book,
-  Music,
-  Document,
-  Quote,
-  Words,
-  Lightbulb,
-  ArrowRight,
-  GitHub,
-  Twitter
+  Document
 } from '@components/icons'
+import Home from '@components/icons/home'
+import Contact from '@components/icons/contact'
+import Bolt from '@components/icons/bolt'
+
 import styles from './command.module.css'
 import headerStyles from '@components/header/header.module.css'
 import { useTheme } from 'next-themes'
@@ -79,16 +73,9 @@ const CommandMenu = memo(() => {
       'g c': () => router.push('/contact'),
       // Collections
       'g r': () => router.push('/reading'),
-      'g d': () => router.push('/design'),
-      'g k': () => router.push('/keyboards'),
-      'g m': () => router.push('/music'),
       'g p': () => router.push('/projects'),
-      'g q': () => router.push('/quotes'),
-      'g w': () => router.push('/words'),
-      'g i': () => router.push('/ideas'),
       // Social
-      'g t': () => () =>
-        window.open('https://twitter.com/pacocoursey', '_blank')
+      'g t': () => () => window.open('https://twitter.com/sdotboro', '_blank')
     }
   }, [router, setPages])
 
@@ -248,14 +235,14 @@ const DefaultItems = () => {
     <>
       <Item
         value="Themes"
-        icon={<Sparkles />}
+        icon={<Bolt />}
         keybind="t"
         closeOnCallback={false}
       />
       <Group title="Blog">
         <Item value="Blog" icon={<Pencil />} keybind="g b" />
         <Item
-          value="Search blog..."
+          value="Search blog"
           icon={<Search />}
           closeOnCallback={false}
           callback={() => setPages([...pages, BlogItems])}
@@ -268,37 +255,13 @@ const DefaultItems = () => {
       </Group>
 
       <Group title="Collection">
-        <Item value="Reading" icon={<Book />} keybind="g r" />
-        <Item value="Design" icon={<Design />} keybind="g d" />
-        <Item value="Keyboards" icon={<M6 />} keybind="g k" />
-        <Item value="Music" icon={<Music />} keybind="g m" />
+        <Item value="Articles" icon={<Book />} keybind="g r" />
         <Item value="Projects" icon={<Document />} keybind="g p" />
-        <Item value="Quotes" icon={<Quote />} keybind="g q" />
-        <Item value="Words" icon={<Words />} keybind="g w" />
-        <Item value="Ideas" icon={<Lightbulb />} keybind="g i" />
       </Group>
 
       <Group title="Navigation">
-        <Item value="Home" icon={<ArrowRight />} keybind="g h" />
-        <Item value="Contact" icon={<ArrowRight />} keybind="g c" />
-      </Group>
-
-      <Group title="Social">
-        <Item
-          value="GitHub"
-          icon={<GitHub />}
-          callback={() =>
-            window.open('https://github.com/pacocoursey', '_blank')
-          }
-        />
-        <Item
-          value="Twitter"
-          icon={<Twitter />}
-          keybind="g t"
-          callback={() =>
-            window.open('https://twitter.com/pacocoursey', '_blank')
-          }
-        />
+        <Item value="Home" icon={<Home />} keybind="g h" />
+        <Item value="Contact" icon={<Contact />} keybind="g c" />
       </Group>
     </>
   )
@@ -330,7 +293,7 @@ const Item = ({
     <CommandItem {...props} callback={cb}>
       <div>
         <div className={styles.icon}>{icon}</div>
-        {children || props.value}
+        <p>{children || props.value}</p>
       </div>
 
       {keybind && (

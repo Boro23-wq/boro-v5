@@ -10,13 +10,16 @@
   display: flex;
   align-items: center;
   padding-top: var(--gap);
-  border-top: 1px solid var(--lighter-gray);
+  border-bottom: 1px solid var(--lighter-gray);
   display: flex;
   align-items: flex-start;
   padding-bottom: 3rem;
+  transition: color var(--transition);
 }
 
 .type {
+  display: flex;
+  direction: row;
   font-size: 1rem;
   line-height: 30px;
   flex-basis: 5rem;
@@ -33,7 +36,7 @@
 .link:focus .title,
 .link:hover .icon,
 .link:focus .icon {
-  color: var(--gray);
+  color: var(--dark-gray);
 }
 
 .title,
@@ -44,13 +47,15 @@
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
+  color: var(--gray);
   transition: color var(--transition);
 }
 
 .description {
-  color: var(--gray);
+  font-size: 0.95rem;
+  color: var(--light-gray);
   margin-top: var(--gap-half);
 }
 

@@ -4,7 +4,7 @@ import TextEntry from '@components/entry/text'
 import styles from './posts-list.module.css'
 
 const Posts = ({ slug, posts, paginate }) => {
-  const [showMore, setShowMore] = useState(3)
+  const [showMore, setShowMore] = useState(5)
 
   return (
     <div className={styles.container}>
@@ -25,6 +25,7 @@ const Posts = ({ slug, posts, paginate }) => {
           />
         )
       })}
+
       {paginate && showMore < posts.length && (
         <button
           onClick={() => {
@@ -32,7 +33,7 @@ const Posts = ({ slug, posts, paginate }) => {
           }}
           className={styles.button}
         >
-          Show More
+          Load More
         </button>
       )}
     </div>

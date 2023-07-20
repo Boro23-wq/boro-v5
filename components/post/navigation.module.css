@@ -5,9 +5,9 @@
   align-items: center;
 }
 
-.previous, .next {
-  font-weight: 500;
-  transition: color var(--transition);
+.previous,
+.next {
+  font-weight: 400;
 }
 
 .next {
@@ -17,9 +17,12 @@
 .title {
   font-weight: normal;
   margin-bottom: var(--gap-half);
+  transition: color var(--transition);
 }
 
-.previous:hover, .next:hover,
-.previous:focus, .next:focus {
+.previous:hover,
+.next:hover,
+.previous:focus,
+.next:focus {
   color: var(--fg);
 }
