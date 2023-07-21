@@ -1,5 +1,7 @@
 import Head from '@components/head'
 import Header from '@components/header'
+import Footer from '@components/footer'
+
 import styles from './page.module.css'
 
 const Page = ({
@@ -21,6 +23,7 @@ const Page = ({
 
       {header && <Header title={showHeaderTitle && title} />}
       <main className={styles.main}>{children}</main>
+      {footer && <Footer />}
     </div>
   )
 }

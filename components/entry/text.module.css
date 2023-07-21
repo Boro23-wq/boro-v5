@@ -15,7 +15,7 @@
   padding-top: var(--gap);
   display: flex;
   align-items: flex-start;
-  padding-bottom: 3rem;
+  padding-bottom: var(--gap);
   transition: color var(--transition);
 }
 

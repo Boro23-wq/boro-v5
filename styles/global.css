@@ -16,6 +16,13 @@
   --main-content: 40rem;
   --radius: 8px;
   --inline-radius: 5px;
+  --header-height: 32px;
+  --footer-height: 48px;
+  --body-margin-left: max(24px, env(safe-area-inset-left));
+  --body-margin-right: max(24px, env(safe-area-inset-right));
+  --layer-above-sticky: 20;
+  --layer-header: 10;
+  --layer-sticky: 10;
 
   /* Typography */
   --font-fallback: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -33,7 +40,7 @@
   /* Dark Mode Colors */
   --bg: #131415;
   --fg: #fafbfc;
-  --gray: #666;
+  --gray: #808080;
   --light-gray: #505050;
   --lighter-gray: #222;
   --lightest-gray: #1a1a1a;

@@ -14,23 +14,14 @@ import {
   CommandGroup
 } from 'cmdk'
 
-import {
-  Command as CommandIcon,
-  Pencil,
-  Search,
-  RSS,
-  Book,
-  Document
-} from '@components/icons'
-import Home from '@components/icons/home'
-import Contact from '@components/icons/contact'
-import Bolt from '@components/icons/bolt'
+import { Command as CommandIcon } from '@components/icons'
+
+import tinykeys from '@lib/tinykeys'
+import postMeta from '@data/blog.json'
 
 import styles from './command.module.css'
 import headerStyles from '@components/header/header.module.css'
 import { useTheme } from 'next-themes'
-import tinykeys from '@lib/tinykeys'
-import postMeta from '@data/blog.json'
 
 const CommandData = React.createContext({})
 const useCommandData = () => React.useContext(CommandData)
@@ -228,40 +219,27 @@ const Group = ({ children, title }) => {
 }
 
 const DefaultItems = () => {
-  const router = useRouter()
   const { setPages, pages } = useCommandData()
 
   return (
     <>
-      <Item
-        value="Themes"
-        icon={<Bolt />}
-        keybind="t"
-        closeOnCallback={false}
-      />
+      <Item value="Themes" keybind="t" closeOnCallback={false} />
       <Group title="Blog">
-        <Item value="Blog" icon={<Pencil />} keybind="g b" />
+        <Item value="Blog" keybind="g b" />
         <Item
           value="Search blog"
-          icon={<Search />}
           closeOnCallback={false}
           callback={() => setPages([...pages, BlogItems])}
-        />
-        <Item
-          value="RSS"
-          icon={<RSS />}
-          callback={() => router.push('/feed.xml')}
         />
       </Group>
 
       <Group title="Collection">
-        <Item value="Articles" icon={<Book />} keybind="g r" />
-        <Item value="Projects" icon={<Document />} keybind="g p" />
+        <Item value="Projects" keybind="g p" />
       </Group>
 
       <Group title="Navigation">
-        <Item value="Home" icon={<Home />} keybind="g h" />
-        <Item value="Contact" icon={<Contact />} keybind="g c" />
+        <Item value="Home" keybind="g h" />
+        <Item value="Contact" keybind="g c" />
       </Group>
     </>
   )

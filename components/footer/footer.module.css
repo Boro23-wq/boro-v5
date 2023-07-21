@@ -1,0 +1,40 @@
+.home {
+  outline: none;
+  display: inline-flex;
+}
+
+.nav {
+  margin: var(--small-gap) auto auto auto;
+  padding: var(--gap) 0;
+  top: 0;
+}
+
+.footer {
+  border-top: 1px solid var(--lighter-gray);
+  position: relative;
+  height: var(--footer-height);
+  width: calc(100% + var(--body-margin-right) + var(--body-margin-left));
+  left: calc(-1 * var(--body-margin-left));
+  background: var(--bg);
+  z-index: var(--layer-header);
+  padding: 0 var(--body-margin-left);
+}
+
+.footer > div {
+  display: flex;
+  justify-content: space-between;
+  max-width: var(--main-content);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  white-space: nowrap;
+}
+
+.content {
+  overflow: auto;
+  color: var(--gray-alpha);
+  font-size: 0.85rem;
+  font-weight: 300;
+  margin-left: var(--gap);
+}
