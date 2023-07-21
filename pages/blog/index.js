@@ -12,7 +12,7 @@ const Blog = ({ posts }) => {
     >
       <article>
         <ul>
-          <PostsList posts={posts} paginate />
+          <PostsList posts={posts} paginate={false} />
         </ul>
       </article>
     </Page>

@@ -2,15 +2,17 @@
   list-style-type: none;
 }
 
+.text {
+  padding-left: var(--gap);
+  padding-right: var(--gap);
+}
+
 .link {
-  display: block;
   text-decoration: none;
   color: var(--fg);
   outline: none;
-  display: flex;
   align-items: center;
   padding-top: var(--gap);
-  border-bottom: 1px solid var(--lighter-gray);
   display: flex;
   align-items: flex-start;
   padding-bottom: 3rem;
@@ -20,12 +22,9 @@
 .type {
   display: flex;
   direction: row;
-  font-size: 1rem;
-  line-height: 30px;
-  flex-basis: 5rem;
+  font-size: 0.85rem;
   white-space: nowrap;
-  margin-right: var(--gap);
-  color: var(--gray);
+  color: var(--light-gray);
 }
 
 .type + div {
@@ -36,7 +35,7 @@
 .link:focus .title,
 .link:hover .icon,
 .link:focus .icon {
-  color: var(--dark-gray);
+  color: var(--fg);
 }
 
 .title,
@@ -47,14 +46,14 @@
 }
 
 .title {
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 0.975rem;
+  font-weight: 400;
   color: var(--gray);
   transition: color var(--transition);
 }
 
 .description {
-  font-size: 0.95rem;
+  font-size: 0.925rem;
   color: var(--light-gray);
   margin-top: var(--gap-half);
 }

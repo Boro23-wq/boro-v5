@@ -33,13 +33,13 @@ article [id]::before {
 
 article ul {
   padding: 0;
-  list-style-position: inside;
+  list-style-position: outside;
   list-style-type: circle;
 }
 
 article ol {
   padding: 0;
-  list-style-position: inside;
+  list-style-position: outside;
 }
 
 article ul li.reset {
@@ -99,10 +99,12 @@ input[type='checkbox']:focus {
 }
 
 article *:not(pre) > code {
-  font-weight: 600;
+  font-weight: 400;
+  background-color: var(--lighter-gray);
+  border-radius: 0.2rem;
   font-family: var(--font-sans);
-  font-size: 1rem;
-  padding: 0 3px;
+  font-size: 0.9rem;
+  padding: 2px 4px;
 }
 
 article *:not(pre) > code::before,

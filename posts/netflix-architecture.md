@@ -102,11 +102,7 @@ Query Params: {
 
 We require various tables to persist data such as user data, profile data, subscriptions data, and so on and so forth. Since for the scope of our system, we are only dealing with videos and their metadata we need to have some kind of data model to store the metadata of the videos. We can make use of a document-based store like MongoDB to store this information. The data-model is for storing video meta-data is demonstrated below.
 
-<img
-style={{ margin: '24px auto', width: '35%' }}
-src="/blog/netflix-architecture/video-metadata.png"
-alt="metadata"
-/>
+<img src="/blog/netflix-architecture/video-metadata.png" alt="metadata" />
 
 We also have another requirement of storing subtitles for the videos. We can make use of some sort of OpenTSDB to store the subtitles. OpenTSDB databases are great for storing and serving massive amounts of time-series data. Below we have demonstrated an event-driven model where each event occupies a timestamp of the video timeline.
 
@@ -134,11 +130,7 @@ We also have another requirement of storing subtitles for the videos. We can mak
 
 We will be going through a very high-level design of the Netflix architecture that effectively handles events such as uploading videos by the content creators and streaming videos by the end-users.
 
-<img
-style={{ margin: '24px auto' }}
-src="/blog/netflix-architecture/high-level-architecture.png"
-alt="high level architecture"
-/>
+<img src="/blog/netflix-architecture/high-level-architecture.png" alt="high level architecture" />
 
 ### 1. Netflix CDN (Open Connect)
 
@@ -149,6 +141,7 @@ All of this is possible due to the Open Connect Appliances (OCAs). These applian
 The OCAs can be deployed in two different ways:
 
 1. OCAs are installed within internet exchange points (referred to as IXs or IXPs) interconnected with mutually-present ISPs via settlement-free public or private peering (SFI).
+
 2. OCAs are deployed directly inside ISP networks. For this kind of deployment practice, Netflix provides the server hardware while the ISPs provide power, space, and connectivity. ISPs control the traffic directed towards these OCAs.
 
 ### 2. Data Store
@@ -165,11 +158,7 @@ The control plane services also take care of adding new files to OCAs, compute o
 
 The end-users interact with services provided by the Data Plane for streaming video content. It mainly comprises of two different services - The Playback Service and The Steering Service. The following image depicts the overall flow of the playback process:
 
-<img
-style={{ margin: '24px auto' }}
-src="/blog/netflix-architecture/playback-process.png"
-alt="playback process"
-/>
+<img src="/blog/netflix-architecture/playback-process.png" alt="playback process" />
 
 The Netflix Playback Process can be summarized into the following steps:
 
@@ -191,11 +180,7 @@ The Netflix Playback Process can be summarized into the following steps:
 
 3. Netflix performs transcoding to convert the original video received from the production house/content creators into different formats and resolutions. The transcoder service will check the quality of the uploaded videos, compress the video with different codecs and finally generate different resolutions of the same video.
 
-<img
-style={{ margin: '24px auto' }}
-src="/blog/netflix-architecture/transcoding.png"
-alt="transcoding"
-/>
+<img src="/blog/netflix-architecture/transcoding.png" alt="transcoding" />
 
 4. Netflix also takes care of optimizing the content for different network speeds. You might have experienced a sudden drop in quality while watching a movie on Netflix. And within a jiffy, you are back with the original quality. Those are the optimizations that Netflix works on to provide users with a seamless experience.
 

@@ -50,7 +50,7 @@
 .content {
   overflow: auto;
   color: var(--gray-alpha);
-  font-weight: 400;
+  font-weight: 300;
   margin-left: var(--gap-double);
 }
 

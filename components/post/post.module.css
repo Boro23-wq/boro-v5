@@ -1,8 +1,9 @@
 .date {
-  font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--light-gray);
 }
 
 .title {
-  margin-top: 1rem;
+  margin-top: 1.25rem;
 }
