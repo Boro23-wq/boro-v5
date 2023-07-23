@@ -22,7 +22,11 @@ const Page = ({
       />
 
       {header && <Header title={showHeaderTitle && title} />}
-      <main className={styles.main}>{children}</main>
+      <main className={styles.main}>
+        <div className={styles.grid}>
+          <article className={styles.article}>{children}</article>
+        </div>
+      </main>
       {footer && <Footer />}
     </div>
   )

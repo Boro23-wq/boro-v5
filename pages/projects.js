@@ -4,62 +4,49 @@ import Entry from '@components/entry'
 const Projects = () => {
   return (
     <Page title="Projects" description="Collection of past and present work.">
-      <article>
-        <Entry
-          title="Vercel Design"
-          description="The Vercel Design System"
-          image="https://assets.zeit.co/image/upload/q_auto/front/assets/design/geist-card.png"
-          href="https://zeit.co/design"
-        />
+      <Entry
+        title="Carely"
+        description="Care-coordination and case management made easy."
+        image="carely.png"
+        href="https://github.com/Boro23-wq/cs-673-frontend"
+        position="top"
+      />
 
-        <Entry
-          title="Opus"
-          description="Minimal note-taking application"
-          image="https://res.cloudinary.com/dsdlhtnpw/image/upload/v1572672667/opus_ts9o1o.png"
-          href="https://github.com/pacocoursey/opus"
-          position="top"
-        />
+      <Entry
+        title="Pokedex"
+        description="Demonstrating CSR, SSR, SSG, and ISR."
+        image="pokedex.png"
+        href="https://github.com/Boro23-wq/Pokedex-w-Next"
+      />
 
-        <Entry
-          title="Dusk"
-          description="Simple application icons"
-          image="https://res.cloudinary.com/dsdlhtnpw/image/upload/v1572672667/dusk_o7qcsa.png"
-          href="https://github.com/pacocoursey/dusk"
-          position="top"
-        />
+      <Entry
+        title="Share Snippets"
+        description="Snippets sharing platform."
+        image="ss.png"
+        href="https://github.com/Boro23-wq/Shareable-Snippets"
+      />
 
-        <Entry
-          title="F2PRS"
-          description="Accurate hiscores for RuneScape"
-          image="https://res.cloudinary.com/dsdlhtnpw/image/upload/v1572672667/f2prs_se1f4c.png"
-          href="https://github.com/pacocoursey/f2prs"
-          position="top"
-        />
+      <Entry
+        title="Chat"
+        description="Homepage design concept built for a chat application."
+        image="chat.png"
+        href="https://chat-app-homepage.webflow.io/"
+      />
 
-        <Entry
-          title="Xi"
-          description="Monochrome Atom UI theme"
-          image="https://res.cloudinary.com/dsdlhtnpw/image/upload/v1572672666/xi_xti7x0.png"
-          href="https://github.com/pacocoursey/xi-ui"
-          position="top"
-        />
+      <Entry
+        title="Team"
+        description="Website design concept for remote team collaboration."
+        image="team.png"
+        href="https://team-app-5efacf.webflow.io/"
+      />
 
-        <Entry
-          title="EHP"
-          description="Design and Website for EHP"
-          image="https://res.cloudinary.com/dsdlhtnpw/image/upload/v1572672667/ehp_ibfrlz.png"
-          href="https://github.com/pacocoursey/ehp-rs"
-          position="top"
-        />
-
-        <Entry
-          title="Songbird"
-          description="Website for Songbird Healing Studio"
-          image="https://res.cloudinary.com/dsdlhtnpw/image/upload/v1572672667/songbird_sb0kon.png"
-          href="http://songbirdhealingstudio.com/"
-          position="top"
-        />
-      </article>
+      <Entry
+        title="Stopify - Ecommerce"
+        description="Powerful Ecommerce Mobile UI Kit."
+        image="stopify.png"
+        href="https://boro-ui-ux.webflow.io/project/stopify-ecommerce"
+        position="bottom"
+      />
     </Page>
   )
 }

@@ -7,8 +7,8 @@ const Footer = () => {
     <nav className={styles.nav}>
       <div className={styles.footer}>
         <div>
-          <div className={styles.content}>© Sintu Boro</div>
-          <div className={styles.content}>2023</div>
+          <p className={styles.content}>Boro</p>
+          <p className={styles.content}>2023</p>
         </div>
       </div>
     </nav>

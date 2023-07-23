@@ -33,13 +33,14 @@ article [id]::before {
 
 article ul {
   padding: 0;
-  list-style-position: outside;
+  list-style-position: inside;
   list-style-type: circle;
 }
 
 article ol {
   padding: 0;
-  list-style-position: outside;
+  font-weight: 400;
+  list-style-position: inside;
 }
 
 article ul li.reset {

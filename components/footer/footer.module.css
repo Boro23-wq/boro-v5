@@ -5,7 +5,6 @@
 
 .nav {
   margin: var(--small-gap) auto auto auto;
-  padding: var(--gap) 0;
   top: 0;
 }
 

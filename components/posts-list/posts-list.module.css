@@ -3,51 +3,20 @@
   margin: 0 auto;
 }
 
-.content {
+.yearAndHr {
   display: flex;
-  direction: row;
-  align-items: flex-start;
-  border-bottom: 1px solid var(--lighter-gray);
-}
-
-.post {
-  display: flex;
-  direction: column;
+  align-items: center;
 }
 
 .year {
-  display: flex;
-  direction: row;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   white-space: nowrap;
   color: var(--light-gray);
-  padding-top: var(--gap);
-  padding-bottom: var(--gap-double);
 }
 
-.hr {
-  border-bottom: 1px solid var(--light-gray);
-}
-
-.button {
-  margin-top: var(--gap);
-  width: 100%;
-  cursor: pointer;
-  border-radius: var(--radius);
-  color: var(--gray);
-  font-weight: 500;
-  background: var(--lighter-gray);
+.yearHr {
+  flex-grow: 1; /* Make the HR take all available space */
+  margin-left: 10px; /* Add some space between the year and HR */
   border: none;
-  padding: var(--gap-half) var(--gap);
-  transition: background-color var(--transition), color var(--transition);
-  outline: none;
-}
-
-.button:hover,
-.button:focus {
-  color: var(--fg);
-}
-
-.button:active {
-  background-color: var(--lightest-gray);
+  border-top: 1px solid var(--lighter-gray); /* Add a border on top */
 }

@@ -71,3 +71,15 @@
     margin: var(--gap-double) 0;
   }
 }
+
+@media (max-width: 1076px) {
+  .header {
+    padding: 0;
+  }
+}
+
+@media (max-width: 670px) {
+  .header {
+    padding: 0 var(--gap);
+  }
+}

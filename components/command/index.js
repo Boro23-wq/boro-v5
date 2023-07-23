@@ -224,23 +224,23 @@ const DefaultItems = () => {
   return (
     <>
       <Item value="Themes" keybind="t" closeOnCallback={false} />
-      <Group title="Blog">
-        <Item value="Blog" keybind="g b" />
-        <Item
-          value="Search blog"
-          closeOnCallback={false}
-          callback={() => setPages([...pages, BlogItems])}
-        />
-      </Group>
+      {/* <Group title="Blog"> */}
+      <Item value="Blog" keybind="g b" />
+      <Item
+        value="Search blog"
+        closeOnCallback={false}
+        callback={() => setPages([...pages, BlogItems])}
+      />
+      {/* </Group> */}
 
-      <Group title="Collection">
-        <Item value="Projects" keybind="g p" />
-      </Group>
+      {/* <Group title="Collection"> */}
+      <Item value="Projects" keybind="g p" />
+      {/* </Group> */}
 
-      <Group title="Navigation">
-        <Item value="Home" keybind="g h" />
-        <Item value="Contact" keybind="g c" />
-      </Group>
+      {/* <Group title="Navigation"> */}
+      <Item value="Home" keybind="g h" />
+      <Item value="Contact" keybind="g c" />
+      {/* </Group> */}
     </>
   )
 }
@@ -271,7 +271,7 @@ const Item = ({
     <CommandItem {...props} callback={cb}>
       <div>
         <div className={styles.icon}>{icon}</div>
-        <p>{children || props.value}</p>
+        <p className="clamp">{children || props.value}</p>
       </div>
 
       {keybind && (

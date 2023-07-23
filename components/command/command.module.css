@@ -75,24 +75,24 @@
 
 .command [data-command-list] {
   margin: 0;
-  padding: 0;
+  padding: var(--gap-half);
   list-style-type: none;
 }
 
 .command [data-command-item] {
-  padding: 0 var(--gap);
+  padding: 0 var(--gap-half);
   display: flex;
   align-items: center;
   justify-content: space-between;
   outline: none;
   font-size: 1rem;
   cursor: pointer;
-  height: var(--height);
   display: flex;
   align-items: center;
-  text-transform: capitalize;
+  height: var(--small-gap);
   color: var(--gray);
-  min-height: 60px;
+  border-radius: var(--gap-half);
+  text-transform: capitalize;
 }
 
 .command [data-command-item] > div {
@@ -120,7 +120,7 @@
 }
 
 .command [data-command-item][aria-selected] {
-  background: var(--lightest-gray);
+  background: var(--lighter-gray);
   color: var(--fg);
 }
 

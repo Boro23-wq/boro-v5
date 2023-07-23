@@ -4,7 +4,39 @@
 }
 
 .main {
-  max-width: var(--main-content);
+  max-width: var(--page-width);
+  /* min-height: calc(100vh - var(--footer-height)); */
+  position: relative;
   margin: 0 auto;
   padding: 0 var(--gap);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 12rem var(--main-content) 12rem;
+  grid-column-gap: 24px;
+  -moz-column-gap: 24px;
+  column-gap: 24px;
+  align-items: flex-start;
+}
+
+.article {
+  grid-column: 2;
+}
+
+@media (max-width: 1076px) {
+  .grid {
+    grid-template-columns: auto var(--main-content) auto;
+    -moz-column-gap: 16px;
+    column-gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    display: flex;
+    flex-direction: column;
+    align-items: unset;
+    justify-content: flex-start;
+  }
 }
