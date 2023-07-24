@@ -13,7 +13,7 @@ const Error = ({ status }) => {
 
       {status === 404 ? (
         <>
-          <h1>This page cannot be found.</h1>
+          <p className={styles.heading}>This page cannot be found.</p>
 
           <p>
             <blockquote cite="http://www.aaronsw.com/weblog/visitingmit">

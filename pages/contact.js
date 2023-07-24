@@ -1,20 +1,10 @@
 import Page from '@components/page'
+import ConnectData from '@components/connect'
 
 const Contact = () => {
   return (
-    <Page title="Contact" footer={false} description="Get in touch.">
-      <article>
-        <p>Get in touch.</p>
-
-        <blockquote>
-          <a
-            href="mailto:sboro2899@gmail.com?subject=Lets connect!"
-            className="reset"
-          >
-            boro.mail
-          </a>
-        </blockquote>
-      </article>
+    <Page title="Contact" footer={true} description="Get in touch.">
+      <ConnectData />
     </Page>
   )
 }

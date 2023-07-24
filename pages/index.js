@@ -3,7 +3,10 @@ import Link from '@components/link'
 
 const About = () => {
   return (
-    <Page description="I'm Boro, a software designer and developer based in Madison, WI. I build web applications with high-impact user experience, and also write about interesting technologies.">
+    <Page
+      title="Home"
+      description="I'm Boro, a software designer and developer based in Madison, WI. I build web applications with high-impact user experience, and also write about interesting technologies."
+    >
       <div>
         <h1>Sintu Boro</h1>
         <p>
@@ -22,7 +25,6 @@ const About = () => {
           and information.
         </p>
       </div>
-
       <div>
         <h1>Now</h1>
         <p>
@@ -39,7 +41,6 @@ const About = () => {
           to make swimming safer.
         </p>
       </div>
-
       <h1>Connect</h1>
       <p>
         Reach me at{' '}

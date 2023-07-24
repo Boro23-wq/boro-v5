@@ -30,7 +30,7 @@
 
 .nav {
   z-index: 10;
-  margin: var(--small-gap) auto var(--big-gap) auto;
+  margin: var(--small-gap) auto var(--small-gap) auto;
   position: sticky;
   padding: var(--gap) 0;
   top: 0;

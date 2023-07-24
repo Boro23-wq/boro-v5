@@ -10,9 +10,7 @@ const Blog = ({ posts }) => {
       title="Blog"
       description="I write about technologies, best coding practices, and development at large."
     >
-      <article>
-        <PostsList posts={posts} paginate={false} />
-      </article>
+      <PostsList posts={posts} paginate={false} />
     </Page>
   )
 }

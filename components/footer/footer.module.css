@@ -4,8 +4,9 @@
 }
 
 .nav {
-  margin: var(--small-gap) auto auto auto;
-  top: 0;
+  margin: var(--gap-double) auto auto auto;
+  /* bottom: 0; */
+  /* top: 0; */
 }
 
 .footer {
