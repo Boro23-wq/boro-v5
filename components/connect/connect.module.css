@@ -1,3 +1,13 @@
 .heading {
   margin-top: 0;
 }
+
+.link {
+  color: var(--gray);
+  margin-right: var(--gap-quarter);
+  transition: color var(--transition);
+}
+
+.link:hover {
+  color: var(--fg);
+}

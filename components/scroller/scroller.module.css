@@ -1,0 +1,29 @@
+.stack {
+  display: flex;
+  direction: column;
+  justify-content: space-between;
+}
+
+.column {
+  width: 250px;
+  margin-right: var(--gap-three-quarters);
+}
+
+.section {
+  font-size: 0.875rem;
+  color: var(--gray);
+}
+
+.link {
+  font-size: 0.925rem;
+  font-family: var(--font-heading);
+  font-weight: 500;
+}
+
+.description {
+  font-size: 0.91rem;
+  font-family: var(--font-sans);
+  color: var(--light-gray);
+  margin-top: 0;
+  line-height: 1.274rem;
+}

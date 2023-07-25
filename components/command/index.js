@@ -10,8 +10,8 @@ import {
   CommandItem,
   CommandList,
   useCommand,
-  usePages,
-  CommandGroup
+  usePages
+  // CommandGroup
 } from 'cmdk'
 
 import { Command as CommandIcon } from '@components/icons'
@@ -61,7 +61,7 @@ const CommandMenu = memo(() => {
       'g b': () => router.push('/blog'),
       // Navigation
       'g h': () => router.push('/'),
-      'g c': () => router.push('/contact'),
+      'g s': () => router.push('/social'),
       // Collections
       'g r': () => router.push('/reading'),
       'g p': () => router.push('/projects'),
@@ -202,28 +202,34 @@ const BlogItems = () => {
   })
 }
 
-const Label = ({ title, values, search }) => {
-  return (
-    <div className={styles.label} aria-hidden>
-      {title}
-    </div>
-  )
-}
+// const Label = ({ title, values, search }) => {
+//   return (
+//     <div className={styles.label} aria-hidden>
+//       {title}
+//     </div>
+//   )
+// }
 
-const Group = ({ children, title }) => {
-  return (
-    <CommandGroup heading={<Label title={title} />} className={styles.group}>
-      {children}
-    </CommandGroup>
-  )
-}
+// const Group = ({ children, title }) => {
+//   return (
+//     <CommandGroup heading={<Label title={title} />} className={styles.group}>
+//       {children}
+//     </CommandGroup>
+//   )
+// }
 
 const DefaultItems = () => {
   const { setPages, pages } = useCommandData()
 
   return (
     <>
+      {/* <Group title="Navigation"> */}
+      <Item value="Home" keybind="g h" />
+      <Item value="Social" keybind="g s" />
+      {/* </Group> */}
+
       <Item value="Themes" keybind="t" closeOnCallback={false} />
+
       {/* <Group title="Blog"> */}
       <Item value="Blog" keybind="g b" />
       <Item
@@ -235,11 +241,6 @@ const DefaultItems = () => {
 
       {/* <Group title="Collection"> */}
       <Item value="Projects" keybind="g p" />
-      {/* </Group> */}
-
-      {/* <Group title="Navigation"> */}
-      <Item value="Home" keybind="g h" />
-      <Item value="Contact" keybind="g c" />
       {/* </Group> */}
     </>
   )

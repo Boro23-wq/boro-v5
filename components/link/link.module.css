@@ -2,6 +2,7 @@
   outline: none;
   color: var(--fg);
   text-decoration: none;
+  transition: color var(--transition);
 }
 
 .gray {
@@ -17,6 +18,7 @@
   outline: none;
   color: var(--fg);
   text-decoration: none;
+  transition: color var(--transition);
 
   background-image: linear-gradient(to right, var(--gray), var(--gray));
   background-size: 100% 1px;

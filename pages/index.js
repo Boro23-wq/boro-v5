@@ -1,5 +1,6 @@
 import Page from '@components/page'
 import Link from '@components/link'
+import Scroller from '@components/scroller'
 
 const About = () => {
   return (
@@ -25,6 +26,11 @@ const About = () => {
           and information.
         </p>
       </div>
+
+      <div basics-scroller="">
+        <Scroller />
+      </div>
+
       <div>
         <h1>Now</h1>
         <p>
