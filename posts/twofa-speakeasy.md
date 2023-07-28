@@ -153,7 +153,6 @@ Right after we add the routes we can now make a POST request to this route to re
 Now open the Google Authenticator extension/app(this can be installed as an extension) and enter the secret key you just received like so:
 
 <img
-style={{ margin: '24px auto', width: '50%' }}
 src="/blog/2fa-speakeasy/gauth-menu.png"
 alt="auth-menu"
 />

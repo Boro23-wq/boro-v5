@@ -134,6 +134,17 @@ body {
   flex-direction: column;
 }
 
+table {
+  font-size: 0.92rem;
+  letter-spacing: normal;
+  font-weight: 300;
+}
+
+thead {
+  font-family: var(--font-heading);
+  font-weight: 100;
+}
+
 em {
   font-family: var(--font-italic);
   font-size: 1rem;
@@ -322,4 +333,22 @@ details {
   * {
     text-shadow: none !important;
   }
+}
+
+/* animation */
+@keyframes enter {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation-name: enter;
+  animation-duration: 350ms;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
 }

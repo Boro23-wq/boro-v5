@@ -2,7 +2,7 @@ import NextHead from 'next/head'
 import { useTheme } from 'next-themes'
 import { useRouter } from 'next/router'
 
-const BASE_URL = `https://sboro.vercel.app`
+const BASE_URL = `https://boro.im`
 const defaultOgImage =
   'https://res.cloudinary.com/dsdlhtnpw/image/upload/v1572673557/og-image_budbm8.png'
 const useCurrentPath = () => useRouter().asPath.split('?')[0]
@@ -40,7 +40,7 @@ const Head = ({
       <meta name="og:image" content={image} />
 
       {/* URL */}
-      <meta name="og:url" content="https://sboro.vercel.app" />
+      <meta name="og:url" content="https://boro.im" />
       <link key="canonical" rel="canonical" href={BASE_URL + path} />
 
       {/* General */}
@@ -55,7 +55,7 @@ const Head = ({
       <link
         rel="alternate"
         type="application/rss+xml"
-        title="RSS Feed for sboro.app"
+        title="RSS Feed for boro.im"
         href="/feed.xml"
       />
 

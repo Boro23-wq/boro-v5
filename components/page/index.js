@@ -1,8 +1,9 @@
+import { useRouter } from 'next/router'
 import Head from '@components/head'
 import Header from '@components/header'
 import Footer from '@components/footer'
+import ArrowLeft from '@components/icons/arrow-left'
 
-import Link from '@components/link'
 import styles from './page.module.css'
 
 const Page = ({
@@ -14,6 +15,8 @@ const Page = ({
   showHeaderTitle = true,
   children
 }) => {
+  const router = useRouter()
+
   return (
     <div className={styles.wrapper}>
       <Head
@@ -27,12 +30,10 @@ const Page = ({
         <div className={styles.grid}>
           {title !== 'Home' && (
             <nav className={styles.container}>
-              <Link href="/">
-                <div className={styles.nav}>
-                  <em className={styles.arrow}>⤺</em>
-                  <em className={styles.title}>Home</em>
-                </div>
-              </Link>
+              <div onClick={router.back} className={styles.nav}>
+                <ArrowLeft />
+                <em className={styles.title}>Return</em>
+              </div>
             </nav>
           )}
           <article className={styles.article}>{children}</article>

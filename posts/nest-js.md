@@ -6,8 +6,6 @@ description: We take a look at NestJS, a framework for building efficient, scala
 # blog: ['/blog/nestjs/cover.png']
 ---
 
-<img style={{ margin: '24px auto', width: '100%' }} src="/blog/nestjs/cover.png" alt="cover" />
-
 ## Introduction.
 
 > Nest (NestJS) is a framework for building efficient, scalable Node.js server-side applications. It uses progressive JavaScript, and is built with and fully supports TypeScript. - NestJS Docs
@@ -17,13 +15,9 @@ Essentially, NestJS is a layer on top of Node that has supercharged methods and 
 ## Why might we need Nest.js when we have Node.js
 
 - Nest provides a layer of abstraction on top of Node, which means that it can now leverage the features of Node as well as expose supercharged APIs for better performance and efficiency.
-
 - Developers love features and when you know you got more of them, you simply can't deny it. That's the case with Nest.js. You have now access to tons of third-party modules that can speed up your development process.
-
 - I believe it's not at all a complete deviation from the back-end paradigm. We are still writing the same kind of code, a very similar structure but with an added layer of robustness.
-
 - NestJS is also highly configurable with ORM's (like TypeORM) which we can make use of to work with databases. This again means that you also have great TypeORM features like Active Record and Data Mapper pattern that you can now leverage easily. The Active Record pattern can necessarily help you obtain simplicity while the Data Mapper pattern can help your code be more maintainable.
-
 - Another point to add is that Nest admits that its architecture is heavily inspired by the Angular framework. It's always a good idea of having effortless testing available when in need and a way to maintain the codebase efficiently. And, Nest provides you just that. A much-needed structure!
 
 ## 3-Tier Architecture Nest.js is predisposed towards
@@ -35,7 +29,6 @@ For example: Considering the flow diagram below, we realize that controllers and
 That doesn't make too much sense after all. It wouldn't probably make much difference if you just have a small application. But when the application grows and you have to register more controllers and routes and have to write more business logic, that's where things seem to get out of control and are certainly not maintainable.
 
 <img
-style={{ margin: '24px auto', width: '40%' }}
 src="/blog/nestjs/three-tier-architecture.png"
 alt="three-tier-architecture"
 />
@@ -52,19 +45,19 @@ alt="three-tier-architecture"
 Once you scaffold a new NestJS project using its CLI, it gives you a few boilerplate files to start with. These are the core files that you would normally work with. The directory structure would look something like this:
 
 ```
-src
- | -  app.controller.spec.ts
- | -  app.controller.ts
- | -  app.module.ts
- | -  app.service.ts
- | -  main.ts
+├── src
+│   ├── app.controller.spec.ts
+│   ├── app.controller.ts
+│   ├── app.module.ts
+│   ├── app.service.ts
+│   ├── main.ts
 ```
 
-`app.controller.ts` : Controller file that will contain all the application routes. <br/>
-`app.controller.spec.ts` : This file would help writing out unit tests for the controllers. <br/>
-`app.module.ts` : The module file essentially bundles all the controllers and providers of your application together. <br/>
-`app.service.ts` : The service will include methods that will perform a certain operation. For example: Registering a new user. <br/>
-`main.ts` : The entry file of the application will take in your module bundle and create an app instance using the NestFactory provided by Nest. <br/>
+- `app.controller.ts` : Controller file that will contain all the application routes. <br/>
+- `app.controller.spec.ts` : This file would help writing out unit tests for the controllers. <br/>
+- `app.module.ts` : The module file essentially bundles all the controllers and providers of your application together. <br/>
+- `app.service.ts` : The service will include methods that will perform a certain operation. For example: Registering a new user. <br/>
+- `main.ts` : The entry file of the application will take in your module bundle and create an app instance using the NestFactory provided by Nest. <br/>
 
 Right away you know that there's a certain structure laid out that you need to follow. And that is what helps developers write clean, scalable, and maintainable code.
 
@@ -72,7 +65,7 @@ Right away you know that there's a certain structure laid out that you need to f
 
 Let us create a service file and export a class called CatsService which will implement a few methods which we can import and utilize in our controller file.
 
-```ts:cats.service.ts
+```ts
 import { Injectable } from '@nestjs/common'
 
 @Injectable()
@@ -89,7 +82,7 @@ export class CatsService {
 
 Here we are exporting a class called `CatsService` and have defined three different methods. We also use `@Injectable()` which is a decorator. The decorator attaches metadata and marks a class available to be provided and injected as a dependency. Since we have injected this class as a dependency, let's use it inside of the controller to retrieve the cats.
 
-```ts:cats.controller.ts
+```ts
 import { Controller, Get } from '@nestjs/common'
 import { CatsService } from '../services/cats.service'
 
@@ -122,14 +115,13 @@ Also, the `@Get()` decorator accepts a pathname that we can make use of to reque
 Let's request to the endpoint `getAllCats` that we just defined and see what we get returned.
 
 <img
-style={{ margin: '24px auto', width: '100%' }}
 src="/blog/nestjs/postman.png"
 alt="postman"
 />
 
 As we can tell the return result is received as expected. This is technically the pattern that we are going to see a lot with Nest. We have a service file that will implement all the methods/logic of our application while the controller file will take care of returning the results from the services using appropriate routes.
 
-```ts:cats.module.ts
+```ts
 import { Module } from '@nestjs/common'
 import { CatsController } from './controllers/cats.controller'
 import { CatsService } from './services/cats.service'
@@ -145,7 +137,7 @@ The module file above bundles all our controllers and providers/services togethe
 
 We can also create multiple feature modules that will help us organize the code relevant to a specific feature. All the feature modules can then be imported inside the root app model. For demonstration, we only have one root module above (the `cats.module.ts` file in this case).
 
-```ts:main.ts
+```ts
 import { NestFactory } from '@nestjs/core'
 import { CatsModule } from './cats.module'
 

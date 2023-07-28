@@ -9,14 +9,28 @@ const About = () => {
       description="I'm Boro, a software designer and developer based in Madison, WI. I build web applications with high-impact user experience, and also write about interesting technologies."
     >
       <div>
-        <h1>Sintu Boro</h1>
-        <p>
+        <h1
+          animate=""
+          className="animate fade-in"
+          style={{ animationDelay: '0ms' }}
+        >
+          Sintu Boro
+        </h1>
+        <p
+          animate=""
+          className="animate fade-in"
+          style={{ animationDelay: '200ms' }}
+        >
           <em>Building experiences.</em> I'm Boro, a software designer and
           developer. I build web applications with a focus on performance,
           user-centric design, and high-impact user experience.{' '}
         </p>
 
-        <p>
+        <p
+          animate=""
+          className="animate fade-in"
+          style={{ animationDelay: '400ms' }}
+        >
           I{' '}
           <Link underline href="/blog">
             write
@@ -27,19 +41,38 @@ const About = () => {
         </p>
       </div>
 
-      <div basics-scroller="">
+      <div
+        basics-scroller=""
+        animate=""
+        className="animate fade-in"
+        style={{ animationDelay: '600ms' }}
+      >
         <Scroller />
       </div>
 
       <div>
-        <h1>Now</h1>
-        <p>
+        <h1
+          animate=""
+          className="animate fade-in"
+          style={{ animationDelay: '800ms' }}
+        >
+          Now
+        </h1>
+        <p
+          animate=""
+          className="animate fade-in"
+          style={{ animationDelay: '1000ms' }}
+        >
           Self-motivated developer with over three years of experience in
           full-stack web development. I have previously built and delivered{' '}
           <em>highly performant, design-centric</em> web applications with
           excellent user experiences.
         </p>
-        <p>
+        <p
+          animate=""
+          className="animate fade-in"
+          style={{ animationDelay: '1200ms' }}
+        >
           Currently teamed up with{' '}
           <Link underline href="https://wavedds.com" external>
             Wave DDS
@@ -47,17 +80,30 @@ const About = () => {
           to make swimming safer.
         </p>
       </div>
-      <h1>Connect</h1>
-      <p>
-        Reach me at{' '}
-        <Link underline href="https://linkedin.com/in/sintu-boro" external>
-          boro@linkedin
-        </Link>{' '}
-        or{' '}
-        <Link underline href="https://twitter.com/sdotboro" external>
-          boro@twitter.
-        </Link>{' '}
-      </p>
+
+      <div>
+        <h1
+          animate=""
+          className="animate fade-in"
+          style={{ animationDelay: '1400ms' }}
+        >
+          Connect
+        </h1>
+        <p
+          animate=""
+          className="animate fade-in"
+          style={{ animationDelay: '1600ms' }}
+        >
+          Reach me at{' '}
+          <Link underline href="https://linkedin.com/in/sintu-boro" external>
+            boro@linkedin
+          </Link>{' '}
+          or{' '}
+          <Link underline href="https://twitter.com/sdotboro" external>
+            boro@twitter.
+          </Link>{' '}
+        </p>
+      </div>
     </Page>
   )
 }

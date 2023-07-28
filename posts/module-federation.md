@@ -38,7 +38,7 @@ Furthermore, we need to know another concept of overriding modules. For example,
 - NPM is slow.
 - Module Federation was designed so that standalone applications could entirely be in their own repository, deployed independently, and run as its own independent SPA.
 
-# Let's try out Module Federation
+# Let us try out Module Federation
 
 We are going to have two different Next.js applications for the demonstration. One of which will be a provider or a build that exposes modules to be consumed and the other one would import a component from the consumable build. Just to give you a background if you haven't already used Next.js, Next.js is essentially a React front-end framework that provides tons of new features like Server-side rendering and Static Site Generation on top of the React ecosystem.
 

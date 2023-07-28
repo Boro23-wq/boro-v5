@@ -20,7 +20,11 @@
   text-decoration: none;
   transition: color var(--transition);
 
-  background-image: linear-gradient(to right, var(--gray), var(--gray));
+  background-image: linear-gradient(
+    to right,
+    var(--extra-light-gray),
+    var(--extra-light-gray)
+  );
   background-size: 100% 1px;
   background-position: left bottom;
   background-repeat: no-repeat;

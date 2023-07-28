@@ -7,7 +7,7 @@ description: An image recognition pipeline in AWS, using two parallel EC2 instan
 
 An image recognition pipeline in AWS, using two parallel EC2 instances, S3, SQS, and Rekognition.
 
-**Goal**: The purpose of this project is to learn how to use the Amazon AWS cloud platform and to develop an AWS application that uses existing cloud services. Specifically, we will learn:
+<u>Goal</u>: The purpose of this project is to learn how to use the Amazon AWS cloud platform and to develop an AWS application that uses existing cloud services. Specifically, we will learn:
 
 1. How to create VMs (EC2 instances) in the cloud.
 2. How to use cloud storage (S3) in your applications.
@@ -15,7 +15,7 @@ An image recognition pipeline in AWS, using two parallel EC2 instances, S3, SQS,
 4. How to program distributed applications in Java on Linux VMs in the cloud, and,
 5. How to use a machine learning service (AWS Rekognition) in the cloud.
 
-**Description**: We are building an image recognition pipeline in AWS, using two EC2 instances, S3, SQS, and Rekognition. The project is written in Java on Amazon Linux VMs. For the rest of the description, you should refer to the figure below:
+<u>Description</u>: We are building an image recognition pipeline in AWS, using two EC2 instances, S3, SQS, and Rekognition. The project is written in Java on Amazon Linux VMs. For the rest of the description, you should refer to the figure below:
 
 <img src="/blog/image-rec-pipeline/flow-diagram.png" alt="flow diagram" />
 
@@ -26,9 +26,9 @@ We will create two EC2 instances (EC2-A and EC2-B as in the figure), with Amazon
 The following solution was attempted using the AWS account provided by my school. If you have an individual account things should be a little different, but the idea is basically the same.
 
 1. Login to your AWS account.
-2. Once you login to your AWS Lab under Courses > Modules, select **Learner Lab**.
-3. Start Lab and follow the **Readme** tab (located on top-right along with **Start Lab**, **End Lab**, **AWS Details**, and **Reset** buttons) to start your AWS environment. To start the AWS console make sure you click the AWS button with the green circle. Red circle means the lab is inactive and green circle means the lab is active.
-4. Make sure you copy the AWS **access_key**, **secret_key**, and **session_token** (can be found in **AWS details** button) and paste it on your ~/.aws/credentials file. Along with that download the **PEM file** under **SSH key** to authenticate later when you access the EC2 instances through terminal.
+2. Once you login to your AWS Lab under Courses > Modules, select Learner Lab.
+3. Start Lab and follow the Readme tab (located on top-right along with Start Lab, End Lab, AWS Details, and Reset buttons) to start your AWS environment. To start the AWS console make sure you click the AWS button with the green circle. Red circle means the lab is inactive and green circle means the lab is active.
+4. Make sure you copy the AWS access_key, secret_key, and session_token (can be found in AWS details button) and paste it on your ~/.aws/credentials file. Along with that download the PEM file under SSH key to authenticate later when you access the EC2 instances through terminal.
    - Copy your AWS keys. These keys are available regardless of a student or an individual account.
 5. Head over to the AWS Management console and search for EC2. Once you head over to the EC2 Dashboard, the following steps will help create two instances.
 
@@ -36,26 +36,25 @@ The following solution was attempted using the AWS account provided by my school
 
 1. Click on Launch instance.
 2. Enter the name of the EC2 instance you want to create.
-3. Under the AMI select **Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type**.
-4. Select Instance type to be **t2.micro**. T2 instances are a low-cost, general purpose instance type that provides a baseline level of CPU performance with the ability to burst above the baseline when needed.
-5. Select **vockey** as a Key-Pair value which should be pre-populated.
+3. Under the AMI select <u>Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type</u>.
+4. Select Instance type to be <u>t2.micro</u>. T2 instances are a low-cost, general purpose instance type that provides a baseline level of CPU performance with the ability to burst above the baseline when needed.
+5. Select <u>vockey</u> as a Key-Pair value which should be pre-populated.
    - Note: You can create your own Key-Pair value with required permissions.
 6. Under Network Settings, select Create security group and check the below settings.
    - [x] Allow SSH traffic from
    - [x] Allow HTTPs traffic from the internet
    - [x] Allow HTTP traffic from the internet
-   - [x] And instead of **Anywhere**, select **My IP** to only send traffic from your IP address.
-7. It is recommended to not change settings under **Configure storage** and **Advanced details** unless you know what you are doing.
-
-**Note:** You have to follow the above step twice to create two instances. My instances are named **EC2-A** and **EC2-B** and looks like this:
+   - [x] And instead of <u>Anywhere</u>, select <u>My IP</u> to only send traffic from your IP address.
+7. It is recommended to not change settings under <u>Configure storage</u> and <u>Advanced details</u> unless you know what you are doing.
+   <u>Note:</u> You have to follow the above step twice to create two instances. My instances are named <u>EC2-A</u> and <u>EC2-B</u> and looks like this:
 
 ![Running EC2 instances](https://raw.githubusercontent.com/Boro23-wq/AWS-Image-Recognition-Pipeline/master/assets/running-ec2-instances.png)
 
 ### Add IAM roles to the created instances:
 
-1. Once you create your instances, head over to EC2 instances to see your instances. If your instances aren't running select an instance, click on **Instance state** dropdown and **Start instance**.
+1. Once you create your instances, head over to EC2 instances to see your instances. If your instances aren't running select an instance, click on <u>Instance state</u> dropdown and <u>Start instance</u>.
 2. Once instances are running, select an instance (one-by-one) head over to Actions > Security > Modify IAM role.
-3. From the dropdown select the **LabInstanceProfile** which is pre-populated. Please note, this role might not have access to S3, SQS, or Rekognition which is required for the project). And update the IAM role.
+3. From the dropdown select the <u>LabInstanceProfile</u> which is pre-populated. Please note, this role might not have access to S3, SQS, or Rekognition which is required for the project). And update the IAM role.
 4. If the IAM role doesn't have access to S3, SQS, or Recognition, head over to IAM > Roles > LabRole and provide the following permissions as policies:
    - [AmazonSQSFullAccess](https://us-east-1.console.aws.amazon.com/iam/home#/policies/arn:aws:iam::aws:policy/AmazonSQSFullAccess)
    - [AmazonS3FullAccess](https://us-east-1.console.aws.amazon.com/iam/home#/policies/arn:aws:iam::aws:policy/AmazonS3FullAccess)
@@ -64,26 +63,24 @@ The following solution was attempted using the AWS account provided by my school
 
 ## Working with the JAVA programs:
 
-1. We will have two different programs, one is to recognize **Object** and the other is to recognize **Text**. Please read the project description to understand why we need two programs.
+1. We will have two different programs, one is to recognize <u>Object</u> and the other is to recognize <u>Text</u> Please read the project description to understand why we need two programs.
 2. The object detection program will run on the first instance while the second instance will run the text detection program.
 3. Please make sure you have the executable JAR files for each of the programs, as we will upload the JAR files in the instances.
    > In simple words, a _JAR file_ is a file that contains a compressed version of .class files, audio files, image files, or directories.
-4. Once you have the JAR files ready you can upload it to the respective EC2 instances using **Cyberduck** (Mac) or **WinSCP** (Windows). I am using Cyberduck for the project since I'm working with a Mac system.
+4. Once you have the JAR files ready you can upload it to the respective EC2 instances using <u>Cyberduck</u> (Mac) or <u>WinSCP</u> (Windows). I am using Cyberduck for the project since I'm working with a Mac system.
    - If you want to learn how to upload file in EC2 instance using Cyberduck, follow the link - [FTP into your EC2-instance with Cyberduck](http://www.brianhoshi.com/blog/how-to-ftp-into-your-ec2-instance-with-cyberduck/)
-   - **Note**: The username while you FTP to your EC2 instance using Cyberduck should be 'ec2-user'.
+   - <u>Note</u> The username while you FTP to your EC2 instance using Cyberduck should be 'ec2-user'.
 
 ## SSH Access from a Mac:
 
 We will now SSH from Mac to access both our EC2 instances.
 
-**Note**: These instructions are for Mac/Linux users only.
+<u>Note</u>: These instructions are for Mac/Linux users only.
 
 1.  Read through the two bullet points in this step before you start to complete the actions, because you will not be able see these instructions when the AWS Details panel is open.
-
-    - Choose the **AWS Details** link above these instructions.
-    - Choose the **Download PEM** button and save the **labsuser.pem** file. (Typically your browser will save it to the Downloads directory.)
-
-2.  Open a terminal window, and change directory `cd` to the directory where the **.pem** file was downloaded. For example, run this command, if it was saved to your Downloads directory:
+    - Choose the <u>AWS Details</u> link above these instructions.
+    - Choose the <u>Download PEM</u> button and save the <u>labsuser.pem</u> file. (Typically your browser will save it to the Downloads directory.)
+2.  Open a terminal window, and change directory `cd` to the directory where the <u>.pem</u> file was downloaded. For example, run this command, if it was saved to your Downloads directory:
     ```bash
     cd ~/Downloads
     ```
@@ -91,9 +88,9 @@ We will now SSH from Mac to access both our EC2 instances.
     ```shell
     chmod 400 labsuser.pem
     ```
-4.  Return to the AWS Management Console, and in the EC2 service, choose **Instances**. Check the box next to the instance you want to connect to.
-5.  In the _Description_ tab, copy the **IPv4 Public IP** value.
-6.  Return to the terminal window and run this command (replace **public-ip** with the actual public IP address you copied):
+4.  Return to the AWS Management Console, and in the EC2 service, choose <u>Instances</u>. Check the box next to the instance you want to connect to.
+5.  In the _Description_ tab, copy the <u>IPv4 Public IP</u> value.
+6.  Return to the terminal window and run this command (replace <u>public-ip</u> with the actual public IP address you copied):
 
 ```bash
 ssh -i <filename>.pem ec2-user@<public-ip>
@@ -107,12 +104,12 @@ Once we SSH to the two EC2 instances we will have something like this:
 
 ## Run the programs on respective EC2 instance:
 
-1. Make sure to update your **access_key**, **secret_key**, and **default_region** on your AWS terminal.
+1. Make sure to update your <u>access_key</u>, <u>secret_key</u>, and <u>default_region</u> on your AWS terminal.
    - To update the above information, type `aws configure` on the AWS terminal.
-   - The default region should be **us-east-1**.
+   - The default region should be <u>us-east-1</u>.
 2. Once you are done with the configuration, run the programs using the command `java -jar <NAME_OF_YOUR_JAR_FILE>.jar`.
 3. For the second program since we want to output the result in a text file, we can use the command `java -jar <NAME_OF_YOUR_JAR_FILE>.jar > output.txt`.
-   - An **output.txt** file will be created and the output of the second program (running on the second instance) will be recorded on the file.
+   - An <u>output.txt</u> file will be created and the output of the second program (running on the second instance) will be recorded on the file.
    - The file will have the necessary data about the indexes of the images that have both cars and text, and also prints the actual text in each image next to its index.
 
 ### Running program on EC2-A instance (First EC2 instance):
@@ -124,7 +121,6 @@ Once we SSH to the two EC2 instances we will have something like this:
 2. We have 6 items that are pushed to the queue, since only 6 items satisfies the condition ( Label = "Car" and Confidence > 90).
 3. The queue is created like so:
    ![Queue creation](https://raw.githubusercontent.com/Boro23-wq/AWS-Image-Recognition-Pipeline/master/assets/queue-creation.png)
-
 4. And the contents of the queues can be obtained by long polling:
    ![Queue content](https://raw.githubusercontent.com/Boro23-wq/AWS-Image-Recognition-Pipeline/master/assets/content-inside-queue.png)
 
@@ -134,7 +130,6 @@ Once we populate the queues we can see how does it look when we run the AWSTextR
 
 1. We run the AWSTextRekognition.jar on EC2-B instance like so:
    ![Snapshot of pogram running on EC2-B instance](https://raw.githubusercontent.com/Boro23-wq/AWS-Image-Recognition-Pipeline/master/assets/cmd-to-run-program-ec2-b.png)
-
 2. When instance B finishes, it prints to a file (output.txt), the indexes of the images that have both cars and text, and also prints the actual text in each image next to its index.
 3. The final output stored in output.txt looks like this:
    ![Final output](https://raw.githubusercontent.com/Boro23-wq/AWS-Image-Recognition-Pipeline/master/assets/final-output.png)

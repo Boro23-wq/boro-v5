@@ -40,7 +40,6 @@ The following application demonstrates the feature of Incremental Static Re-gene
 <!-- [Click here to launch a demo of the application.](https://raw.githubusercontent.com/Boro23-wq/blog-v3/master/content/posts/stable-incremental-static-regeneration/app.gif) -->
 
 <img
-style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }}
 src="/blog/stable-incremental-static-regeneration/app.gif"
 alt="application-demo"
 />
@@ -53,7 +52,7 @@ Let us have a quick review of the code and understand how that works. The asynch
 
 ### Querying an endpoint:
 
-```js:getStaticProps()
+```js
 export async function getStaticProps() {
   const res = await fetch('https://api.github.com/graphql', {
     method: 'POST',

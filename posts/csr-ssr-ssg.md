@@ -13,11 +13,17 @@ slug: csr-ssr-ssg
 
 One of the many reasons behind Next.js's traction is due to the ability to render an application on the client-side (in the browser), on the server-side as well as the ability to statically generate pages during build time. Let us have a good look at what each of these terms means:
 
-**1. Client-side rendering:** In a client-side rendered application, the server essentially sends a blank HTML page (loading state) to the client without any dynamic content. You won't really see anything meaningful for split seconds. While the loading state is being rendered, the client (the browser) sends multiple API requests to the desired server to fetch the dynamic content and then later rehydrates the application with the dynamic data.
+### 1. Client-side rendering:
 
-**2. Server-side rendering:** In a server-side rendered application, the server pre-renders the page with dynamic data, and eventually once the hydration is done on the server-side, it delivers a fully populated HTML page with dynamic data to the client. Server-side rendering essentially generates the entire HTML for a page on the server.
+In a client-side rendered application, the server essentially sends a blank HTML page (loading state) to the client without any dynamic content. You won't really see anything meaningful for split seconds. While the loading state is being rendered, the client (the browser) sends multiple API requests to the desired server to fetch the dynamic content and then later rehydrates the application with the dynamic data.
 
-**3. Static-site regeneration:** Static-site generation generates the pages during build time. Basically, a site that is statically generated will produce the HTML pages ahead of time even before any user requests. And, with Next.js' Incremental-static regeneration (ISR), we can statically generate on a per-page basis, without needing to rebuild the entire site, which means that you can update the static pages incrementally as new data comes in.
+### 2. Server-side rendering:
+
+In a server-side rendered application, the server pre-renders the page with dynamic data, and eventually once the hydration is done on the server-side, it delivers a fully populated HTML page with dynamic data to the client. Server-side rendering essentially generates the entire HTML for a page on the server.
+
+### 3. Static-site regeneration:
+
+Static-site generation generates the pages during build time. Basically, a site that is statically generated will produce the HTML pages ahead of time even before any user requests. And, with Next.js' Incremental-static regeneration (ISR), we can statically generate on a per-page basis, without needing to rebuild the entire site, which means that you can update the static pages incrementally as new data comes in.
 
 ## How CSR works?
 

@@ -28,10 +28,10 @@ We have a `users.service` file that imports a `User` class. A lot of times it mi
 
 In that case, you can almost instantly switch between files (or navigate between files). Typescript can help you conveniently navigate between files in your codebase. You can also make use of the shortcuts below to easily navigate between files.
 
-- Go to Definition **(F12)** - Go to the source code of a symbol definition.
-- Peek Definition **(Option or Alt + F12)** - Bring up a Peek window that shows the definition of a symbol.
-- Go to References **(Shift + F12)** - Show all references to a symbol.
-- Go to Implementation **(Cmd or Win + F12)** - Go to the implementations of an interface or abstract method.
+- Go to Definition `(F12)` - Go to the source code of a symbol definition.
+- Peek Definition `(Option or Alt + F12)` - Bring up a Peek window that shows the definition of a symbol.
+- Go to References `(Shift + F12)` - Show all references to a symbol.
+- Go to Implementation `(Cmd or Win + F12)` - Go to the implementations of an interface or abstract method.
 
 ## 2. Code Predictability
 

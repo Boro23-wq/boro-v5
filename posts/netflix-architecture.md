@@ -140,9 +140,8 @@ All of this is possible due to the Open Connect Appliances (OCAs). These applian
 
 The OCAs can be deployed in two different ways:
 
-1. OCAs are installed within internet exchange points (referred to as IXs or IXPs) interconnected with mutually-present ISPs via settlement-free public or private peering (SFI).
-
-2. OCAs are deployed directly inside ISP networks. For this kind of deployment practice, Netflix provides the server hardware while the ISPs provide power, space, and connectivity. ISPs control the traffic directed towards these OCAs.
+- OCAs are installed within internet exchange points (referred to as IXs or IXPs) interconnected with mutually-present ISPs via settlement-free public or private peering (SFI).
+- OCAs are deployed directly inside ISP networks. For this kind of deployment practice, Netflix provides the server hardware while the ISPs provide power, space, and connectivity. ISPs control the traffic directed towards these OCAs.
 
 ### 2. Data Store
 
@@ -163,27 +162,20 @@ The end-users interact with services provided by the Data Plane for streaming vi
 The Netflix Playback Process can be summarized into the following steps:
 
 1. The Cache-Control Services (CCS) receives reports about the CDN health, best possible routes to redirect traffic and availability of content from the OCA.
-
 2. A user on a client device makes a request with a title of the TV show or movie they want to stream from the Netflix application.
-
 3. The playback service then internally verifies the authorization and licensing of the user, and proceeds further to handle the playback request. It also takes into account individual client characteristics such as the location of the client and the client's current network condition.
-
 4. The steering service uses the information stored in the Cache-Control Service (CCS) to fetch the URL of the best possible OCA and sends them back to the playback service.
-
 5. The playback application in turn hands over the URL of the appropriate OCA to the client device and the OCA begins to serve the requested media files.
 
 ## Netflix content onboarding in simple steps!
 
 1. Netflix receives tons of high-quality videos and content from the content creators and requires a tremendous amount of preprocessing before they are made available to the end-users.
-
 2. Netflix supports > 2200 devices and that is where device compatibility comes into the picture. Since various devices support various formats and resolutions, it is indeed a necessity to optimize the video-content.
-
 3. Netflix performs transcoding to convert the original video received from the production house/content creators into different formats and resolutions. The transcoder service will check the quality of the uploaded videos, compress the video with different codecs and finally generate different resolutions of the same video.
 
 <img src="/blog/netflix-architecture/transcoding.png" alt="transcoding" />
 
 4. Netflix also takes care of optimizing the content for different network speeds. You might have experienced a sudden drop in quality while watching a movie on Netflix. And within a jiffy, you are back with the original quality. Those are the optimizations that Netflix works on to provide users with a seamless experience.
-
 5. Successful transcoding produces multiple copies of the same data that is eventually replicated to each and every Open Connect CDN placed across the world. And finally, the media content is available for use.
 
 ## Performance Optimizations

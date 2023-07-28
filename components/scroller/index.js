@@ -14,13 +14,11 @@ const Scroller = () => {
           <div>
             <Link
               className={styles.link}
-              external
               underline
               href="/blog/netflix-architecture"
             >
               Netflix streaming service
             </Link>
-            <ArrowUpRight />
             <p className={styles.description}>
               System behind the tremendous scale.
             </p>
@@ -28,23 +26,20 @@ const Scroller = () => {
           <div>
             <Link
               className={styles.link}
-              external
               underline
               href="/blog/module-federation"
             >
               Module federation
             </Link>
-            <ArrowUpRight />
             <p className={styles.description}>
               Architecture using reusable components between multiple
               applications.
             </p>
           </div>
           <div>
-            <Link className={styles.link} external underline href="/blog">
+            <Link className={styles.link} underline href="/blog">
               All blogs
             </Link>
-            <ArrowUpRight />
             <p className={styles.description}>
               More insights on design and code.
             </p>
@@ -54,15 +49,17 @@ const Scroller = () => {
         <div className={styles.column}>
           <h1 className={styles.section}>Articles</h1>
           <div>
-            <Link
-              className={styles.link}
-              external
-              underline
-              href="https://overreacted.io/before-you-memo/"
-            >
-              Before You memo()
-            </Link>
-            <ArrowUpRight />
+            <div>
+              <Link
+                className={styles.link}
+                external
+                underline
+                href="https://overreacted.io/before-you-memo/"
+              >
+                Before You memo()
+              </Link>
+              <ArrowUpRight />
+            </div>
             <p className={styles.description}>
               Rendering optimizations that come naturally.
             </p>
