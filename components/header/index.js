@@ -14,9 +14,7 @@ const Header = ({ title, content }) => {
             <LogoIcon />
           </a>
         </Link>
-
         <Command />
-
         {title && <div className={styles.content}>{title}</div>}
       </div>
     </nav>

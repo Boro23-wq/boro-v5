@@ -49,7 +49,7 @@ const Scroller = () => {
         <div className={styles.column}>
           <h1 className={styles.section}>Articles</h1>
           <div>
-            <div>
+            <div className={styles.article}>
               <Link
                 className={styles.link}
                 external
@@ -58,36 +58,46 @@ const Scroller = () => {
               >
                 Before You memo()
               </Link>
-              <ArrowUpRight />
+              <div className={styles.arrow}>
+                <ArrowUpRight />
+              </div>
             </div>
             <p className={styles.description}>
               Rendering optimizations that come naturally.
             </p>
           </div>
           <div>
-            <Link
-              className={styles.link}
-              external
-              underline
-              href="https://kentcdodds.com/blog/inversion-of-control"
-            >
-              Inversion of control
-            </Link>
-            <ArrowUpRight />
+            <div className={styles.article}>
+              <Link
+                className={styles.link}
+                external
+                underline
+                href="https://kentcdodds.com/blog/inversion-of-control"
+              >
+                Inversion of control
+              </Link>
+              <div className={styles.arrow}>
+                <ArrowUpRight />
+              </div>
+            </div>
             <p className={styles.description}>
               Make code less nightmare to use and maintain.
             </p>
           </div>
           <div>
-            <Link
-              className={styles.link}
-              external
-              underline
-              href="https://pokedexwnext.netlify.app/"
-            >
-              Next.js rendering
-            </Link>
-            <ArrowUpRight />
+            <div className={styles.article}>
+              <Link
+                className={styles.link}
+                external
+                underline
+                href="https://pokedexwnext.netlify.app/"
+              >
+                Next.js rendering
+              </Link>
+              <div className={styles.arrow}>
+                <ArrowUpRight />
+              </div>
+            </div>
             <p className={styles.description}>
               What is SSR, SSG, CSR, and ISR?
             </p>

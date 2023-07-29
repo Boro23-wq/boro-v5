@@ -14,16 +14,25 @@
   color: var(--gray);
 }
 
+.article {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  margin: 0.25rem 0 0 0.25rem;
+}
+
 .link {
-  font-size: 0.925rem;
-  font-family: var(--font-heading);
-  font-weight: 500;
+  font-size: 0.95rem;
+  font-family: var(--font-sans);
+  font-weight: 300;
 }
 
 .description {
-  font-size: 0.91rem;
+  font-size: 0.9rem;
   font-family: var(--font-sans);
   color: var(--light-gray);
   margin-top: 0;
-  line-height: 1.274rem;
+  line-height: 1.27rem;
 }
