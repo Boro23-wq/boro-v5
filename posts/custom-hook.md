@@ -44,7 +44,7 @@ src / App.js
 
 You might have more files than this. In case you do, go ahead and delete those files as we will no longer need them for this application.
 
-**_Note: I have only highlighted the src folder since we will only be working inside this directory._**
+<u>Note</u>: I have only highlighted the src folder since we will only be working inside this directory.
 
 Now that we have the basic structure ready, we can keep going.
 
@@ -60,7 +60,7 @@ Now inside components directory, go ahead and create three different directories
 
 Inside card, user and post directories create the files card.component.jsx, user.component.jsx and post.component.jsx respectively.
 
-**_Note: The card directory will have a card.css file for styling the card container._**
+<u>Note</u>: The card directory will have a card.css file for styling the card container.
 
 The folder structure will look something like this after creating all the files:
 
@@ -80,7 +80,9 @@ The folder structure will look something like this after creating all the files:
 
 The card component essentially holds the User and the Post data.
 
-```js:src/components/card/card.component.jsx
+<!-- ```js:src/components/card/card.component.jsx -->
+
+```js
 import React from 'react'
 
 import './card.css'
@@ -92,7 +94,9 @@ export default Card
 
 Styling the card component to make it look decent.
 
-```css:src/components/card/card.css
+<!-- ```css:src/components/card/card.css -->
+
+```css
 .card {
   background-color: lightgoldenrodyellow;
   min-width: 300px;
@@ -124,7 +128,9 @@ Styling the card component to make it look decent.
 
 The User component displays the user data.
 
-```js:src/components/user/user.component.jsx
+<!-- ```js:src/components/user/user.component.jsx -->
+
+```js
 import React from 'react'
 
 import Card from '../card/card.component'
@@ -159,7 +165,9 @@ We notice there is an import `useFetch` that we haven't written yet. Don't be su
 
 The Post component will display the post data as expected.
 
-```js:src/components/post/post.component.jsx
+<!-- ```js:src/components/post/post.component.jsx -->
+
+```js
 import React from 'react'
 
 import Card from '../card/card.component'
@@ -194,7 +202,9 @@ We import `useFetch` here as well. Let us now go ahead and create a separate com
 
 Inside components directory create another directory called effects and inside effects create a file named `use-fetch.effect.js`. The same file will hold all the logic of actually making a fetch request to the API and returning the response back to the components.
 
-```js:src/components/effects/use-fetch.effect.js
+<!-- ```js:src/components/effects/use-fetch.effect.js -->
+
+```js
 import { useState, useEffect } from 'react'
 
 const useFetch = url => {
@@ -222,7 +232,9 @@ The useFetch custom hook accepts a 'URL' parameter, does the fetching, and retur
 
 Now for us to display the data on our browser we need to hook our components inside of App.js and pass the id as props that the components receive.
 
-```js:src/App.js
+<!-- ```js:src/App.js -->
+
+```js
 import React from 'react'
 
 import User from './components/user/user.component'

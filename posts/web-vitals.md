@@ -11,7 +11,7 @@ We all want to create beautiful layouts, add exquisite animations, and want to d
 
 ## What are Web Vitals?
 
-Web Vitals are essentially a way to quantify the user-experience of one’s website, which if optimized can help deliver a great user-experience. It is an initiative by Google and they have provided a few different tools to monitor the performance of websites. When one maintains a website it’s just not about delivering the website and putting forth the information for users to consume. But what we do need to take care of are the microscale details including “Does the user see what they want to see?” or “Did the same user visit your website for the second time?”.
+Web Vitals are essentially a way to quantify the user-experience of one’s website, which if optimized can help deliver a great user-experience. It is an initiative by Google and they have provided a few different tools to monitor the performance of websites. When one maintains a website it’s just not about delivering the website and putting forth the information for users to consume. But what we do need to take care of are the microscale details including "Does the user see what they want to see?" or "Did the same user visit your website for the second time?".
 
 Taking care of the modest details will surely take you a long way. In fact, it is a snowball effect. Small optimizations can lead the path to much larger optimizations going forward. Well even though there are a lot of things to consider while delivering a top-notch user-experience, Core Web Vitals makes it relatively easy and simplifies the concept of user-centric design by helping us focus on metrics that matter the most.
 
@@ -40,9 +40,7 @@ There are a handful of developer tools that support Core Web Vitals. Below I hav
 There is a really descriptive workflow described in the [web.dev blog](https://web.dev/vitals-tools/) that talks about how we can use all of the tools above to optimize the Core Web Vitals for a website. If you have some time and want to understand it better I would highly suggest you follow the link above. If not, let me write down the essence for you quickly.
 
 - First of all, you can use Search Console's Core Web Vitals that will generate a report to help you identify the number of pages that require optimizations. And, this is all generated based on field data. Field data is essentially Real User Metrics (RUM) data of real users over the course of a duration (usually a month).
-
 - Once you have the pages that require some digging, you can then use PageSpeed Insights (which I highly recommend) to generate lab and field data on the webpage.
-
 - If you are down to optimize your site locally, using tools like Lighthouse and Chrome DevTools can help you boil down every aspect of Core Web Vitals that requires optimization.
 
 A great resource would be to use [web.dev/measure](https://web.dev/measure/) that can help prioritize a set of guides for optimization. Also, it is recommended that you use Lighthouse Continuous Integration (CI) on every pull request you make to make sure you have optimized the site before deploying the changes to production.
@@ -65,7 +63,7 @@ Additionally, you also receive a Lab score which essentially means that the scor
 
 Lab score comes along with a brief description of what these scores are and helps you visualize where you might need some digging. These scores are very helpful for testing your website and can help you to perform iterative optimizations along the way.
 
-### What's more? Suggestions and Improvements
+### Suggestions and Improvements
 
 What if the web vitals score for your site isn't too great the first time around. You don't have to worry about not knowing where the problem in your site might be. In fact, PageSpeed Insights helps you with a diagnostic section that can perhaps act as a guide or a starting point. As you can see in the picture below, I have drawn out in red boxes to highlight places where PageSpeed Insights wants you to dig in and resolve some of these issues with your site.
 

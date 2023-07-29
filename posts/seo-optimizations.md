@@ -150,7 +150,6 @@ export default function Home() {
 We have bumped up a couple of meta tags (highlighted lines) that will help us with the SEO further.
 
 - The description meta-tag essentially tells search engines, what is the page all about. And by doing this we already have a good looking SEO optimization underway.
-
 - The viewport meta tag will help with mobile screen size optimizations and you may run the risk of poor mobile experience if you don't wish to include them.
 
 By any chance if you want to learn more about configuring viewport you may visit the link [here.](https://web.dev/responsive-web-design-basics/)

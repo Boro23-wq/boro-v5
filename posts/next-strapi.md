@@ -14,11 +14,15 @@ Today we will look at how easy it is to fetch data hosted on a CMS from a Next.j
 
 First of all, we need to have two different application set up. One for the frontend (Next.js) for querying the data from Strapi and the other would be the server that would contain the database and server configurations.
 
-```js:next-strapi/frontend
+<!-- ```js:next-strapi/frontend -->
+
+```js
 npx create-next-app .
 ```
 
-```js:next-strapi/backend
+<!-- ```js:next-strapi/backend -->
+
+```js
 npx create-strapi-app . || npx create-strapi-app . --quickstart
 ```
 
@@ -44,7 +48,9 @@ Once we are done defining the types we can now register different songs and stor
 
 As we have our data ready we now need to set up the database. Setting up the database is fairly simple and requires only a few simple configurations.
 
-```js:config/database.js {7}
+<!-- ```js:config/database.js {7} -->
+
+```js
 module.exports = ({ env }) => ({
   defaultConnection: 'default',
   connections: {
@@ -71,7 +77,9 @@ We are now all set with the backend/server part of our configuration. As you can
 
 In our Next.js application, all we have to do is set up the Strapi client in order to make a request to the server for retrieving the content that we stored earlier. The way we set up a Strapi Client is by exporting a class like so:
 
-```js:StrapiClient.js
+<!-- ```js:StrapiClient.js -->
+
+```js
 export default class StrapiClient {
   constructor() {}
 
@@ -88,7 +96,9 @@ All we do here is make an asynchronous request to the server and return the resp
 
 We then create an instance of Strapi Client exported earlier inside `index.js`. We use the instance to fetch data using "getStaticProps" from Next.js and return the data as a prop.
 
-```js:pages/songs/index.js
+<!-- ```js:pages/songs/index.js -->
+
+```js
 const Strapi_Client = new StrapiClient()
 
 const Songs = ({ songsList }) => {
@@ -115,7 +125,9 @@ We have a couple of ways to fetch data in Next.js ("getServerSideProps", "getSta
 
 Right after, we map through the "songsList" (which is a prop) and render them in a component called SongCard. The SongCard component would look something like this:
 
-```js:components/SongCard.js
+<!-- ```js:components/SongCard.js -->
+
+```js
 import Image from 'next/image'
 
 export default function SongCard({ song }) {
@@ -144,23 +156,9 @@ Setting up a Headless CMS like Strapi is not at all tedious and requires very li
 
 ### Benefits of using Headless CMS
 
-1. <u>
-     <i>Flexibility:</i>
-   </u> With the traditional CMS, developers had a lot less to contribute in terms of the frontend. They
-   had a few templates they had to rely on. But with the advent of Headless CMS, developers can choose
-   their frontend framework of choice and can heavily focus on building a rich user experience.
-
-2. <u>
-     <i>Compatibility:</i>
-   </u> You don't have to worry about the user experience on different devices. Headless CMS makes it
-   easy to display content on any device-type from just one convenient backend.
-
-3. <u>
-     <i>Scalability:</i>
-   </u> The idea behind scalability in Headless CMS is fairly simple. The backend and frontend are basically
-   de-coupled, unlike traditional CMS. So if you want to customize your frontend which means there is
-   no need to touch any backend code. Hence, the service is always live which helps us avoid any downtime
-   due to maintenance.
+1. <u>Flexibility</u>: With the traditional CMS, developers had a lot less to contribute in terms of the frontend. They had a few templates they had to rely on. But with the advent of Headless CMS, developers can choose their frontend framework of choice and can heavily focus on building a rich user experience.
+2. <u>Compatibility</u>: You don't have to worry about the user experience on different devices. Headless CMS makes it easy to display content on any device-type from just one convenient backend.
+3. <u> Scalability</u>: The idea behind scalability in Headless CMS is fairly simple. The backend and frontend are basically de-coupled, unlike traditional CMS. So if you want to customize your frontend which means there is no need to touch any backend code. Hence, the service is always live which helps us avoid any downtime due to maintenance.
 
 So there you go, those were a few benefits of using Headless CMS. And the list doesn't necessarily stop here. There are a number of benefits including the fact that developers can now spend more time focusing on content creation rather than content management is a huge plus. And, if you don't already know:
 

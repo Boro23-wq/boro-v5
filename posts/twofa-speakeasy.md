@@ -18,7 +18,7 @@ In the same way, the two-factor authentication method requires you to enter addi
 - Do not incur any extra costs while setting up.
 - Easy and convenient setup. For most implementations, all a user has to do is enable two-factor authentication and scan a QR code or enter their cellphone number so they can view or receive authentication codes respectively
 
-**_NOTE:_** In this tutorial, we will deal with a backend that implements the time-based one-time password (OTP) made available to us by the Speakeasy library. This tutorial only covers the backend implementation of the two-factor authentication.
+<u>NOTE</u>: In this tutorial, we will deal with a backend that implements the time-based one-time password (OTP) made available to us by the Speakeasy library. This tutorial only covers the backend implementation of the two-factor authentication.
 
 ## Setup
 
@@ -241,7 +241,9 @@ And there you go! We have successfully implemented a two-factor authentication u
 
 The entire `index.js` file would look something like this:
 
-```js:index.js
+<!-- ```js:index.js -->
+
+```js
 const express = require('express')
 const bodyParser = require('body-parser')
 const JsonDB = require('node-json-db').JsonDB

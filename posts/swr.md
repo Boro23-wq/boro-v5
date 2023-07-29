@@ -48,7 +48,7 @@ This is how we implement an SWR. useSWR hook accepts two parameters. Firstly it 
 
 <!-- ```js{22}:fetchingdata/pages/index.js -->
 
-```js:fetchingdata/pages/index.js
+```js
 // importing libraries
 import useSWR from 'swr'
 import fetch from 'unfetch'
@@ -78,7 +78,9 @@ export default Profile
 
 In the above file, the useSWR hook accepts the key as the first argument and the fetcher function as the second argument. Essentially it is hitting the endpoint designated by the key (/api/users/1) for the data. The fetcher function then successfully hits the endpoint and displays the data as a div element (highlighted line) on successful data retrieval.
 
-```js:fetchingdata/pages/api/users/[id].js
+<!-- ```js:fetchingdata/pages/api/users/[id].js -->
+
+```js
 export default (req, res) => {
   const {
     query: { id }

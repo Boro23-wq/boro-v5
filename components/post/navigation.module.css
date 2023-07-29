@@ -16,8 +16,15 @@
 
 .title {
   font-weight: 300;
+  font-size: 0.95em;
+  line-height: 1.4;
   /* margin-bottom: var(--gap-half); */
   transition: color var(--transition);
+}
+
+.old,
+.new {
+  font-weight: 300;
 }
 
 .previous:hover,

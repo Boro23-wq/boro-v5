@@ -24,7 +24,7 @@ Before we can go ahead and write methods to fetch data from a database or a stat
 
 The file would be an array of objects like so:
 
-```js:data.js
+```js
 export const playlist = [
   {
     id: 1,
@@ -66,7 +66,7 @@ For Example: If we have an about page, we create a file called about.js inside t
 
 We will have an index.js file that will act as an entry point to our application. The file will have the following content:
 
-```js:pages/index.js
+```js
 import { playlist } from '../data'
 import { List, Heading } from '@chakra-ui/core'
 
@@ -133,7 +133,7 @@ The component above receives the props 'playlistLists' which was made available 
 
 The Song component is actually responsible for rendering our list in the view. The Song component looks something like this:
 
-```js:components/Song.js
+```js
 import { ListItem, Image, Flex, Text, Stack, Heading } from '@chakra-ui/core'
 import NextLink from 'next/link'
 
@@ -188,7 +188,7 @@ Next.js can help us create pages with dynamic routes. For example, if we want to
 
 Now let us create a file `[id].js` inside the folder called songs. The file will have the following content:
 
-```js:pages/songs/[id].js{16-22}
+```js
 import { playlist } from '../../data'
 import { Box, Heading, Text, Button } from '@chakra-ui/core'
 import NextLink from 'next/link'

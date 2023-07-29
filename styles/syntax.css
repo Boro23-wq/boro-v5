@@ -18,7 +18,13 @@
 
 .token.class-name,
 .token.function,
+.token.keyword.module,
 .token.tag,
 .token.attr-name {
+  font-weight: bold;
   color: var(--name);
+}
+
+.token.maybe-class-name {
+  color: var(--classname);
 }

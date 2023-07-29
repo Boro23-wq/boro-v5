@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-operators */
 import { useRouter } from 'next/router'
 import Head from '@components/head'
 import Header from '@components/header'
@@ -15,12 +16,18 @@ const Page = ({
   showHeaderTitle = true,
   children
 }) => {
+  const titlesToRenderHomeLink = ['Blog', 'Social', 'Projects']
+  const shouldRenderHomeLink = titlesToRenderHomeLink.includes(title)
   const router = useRouter()
+
+  const goTo = route => {
+    router.push(route)
+  }
 
   return (
     <div className={styles.wrapper}>
       <Head
-        title={`${title ? `${title} - ` : ''}Sintu Boro`}
+        title={`${title ? `${title} - ` : ''}Boro`}
         description={description}
         image={image}
       />
@@ -28,11 +35,20 @@ const Page = ({
       {header && <Header title={showHeaderTitle && title !== 'Home'} />}
       <main className={styles.main}>
         <div className={styles.grid}>
-          {title !== 'Home' && (
+          {shouldRenderHomeLink && (
             <nav className={styles.container}>
-              <div onClick={router.back} className={styles.nav}>
+              <div onClick={() => goTo('/')} className={styles.nav}>
                 <ArrowLeft />
-                <em className={styles.title}>Return</em>
+                <em className={styles.title}>Home</em>
+              </div>
+            </nav>
+          )}
+
+          {!shouldRenderHomeLink && title !== 'Home' && (
+            <nav className={styles.container}>
+              <div onClick={() => goTo('/blog')} className={styles.nav}>
+                <ArrowLeft />
+                <em className={styles.title}>Blog</em>
               </div>
             </nav>
           )}

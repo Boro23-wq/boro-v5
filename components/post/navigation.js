@@ -8,7 +8,7 @@ const Previous = ({ previous, next }) => {
       <div className={styles.previous}>
         {previous && (
           <Link href="/blog/[slug]" gray as={`/blog/${previous.slug}`}>
-            <div className={styles.title}>← Older</div>
+            <div className={styles.old}>← Older</div>
             <div className={styles.title}>{previous.title}</div>
           </Link>
         )}
@@ -17,7 +17,7 @@ const Previous = ({ previous, next }) => {
       <div className={styles.next}>
         {next && (
           <Link href="/blog/[slug]" gray as={`/blog/${next.slug}`}>
-            <div className={styles.title}>Newer →</div>
+            <div className={styles.new}>Newer →</div>
             <div className={styles.title}>{next.title}</div>
           </Link>
         )}

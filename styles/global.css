@@ -76,7 +76,8 @@
   --token: #999;
   --comment: #999;
   --keyword: #fff;
-  --name: #fff;
+  --name: #ff006a;
+  --classname: var(--fg);
   --highlight: #2e2e2e;
 }
 
@@ -96,8 +97,9 @@
   /* Syntax Highlighting */
   --token: #666;
   --comment: #999;
-  --keyword: #000;
-  --name: #333;
+  --keyword: var(--fg);
+  --name: #ff006a;
+  --classname: var(--fg);
   --highlight: #eaeaea;
 }
 

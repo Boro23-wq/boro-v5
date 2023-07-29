@@ -23,7 +23,6 @@ Styled components allow us to write CSS inside of JavaScript using tagged templa
 Styled components were created to handle the following reasons:
 
 - Styled components automatically monitor components that are rendered on a webpage and only injects the critically required styles. This means that there is no overhead of extra HTTP requests for fetching the CSS assets.
-
 - Styled components generate unique class names for the styles. Developers now don’t have to worry about namespace clashes.
 
 ```css
@@ -35,12 +34,11 @@ Styled components were created to handle the following reasons:
 ```
 
 - Adapting the styling of a component based on its props or a global theme is simple and intuitive without having to manually manage dozens of classes.
-
 - Automatic vendor prefixing: write your CSS to the current standard and let Styled components handle the rest. Styled components use the [stylis.js](https://stylis.js.org/) package under the hood for prefixing the CSS rules.
 
 ## Features of Styled-components
 
-<b>1. Passing Props:</b>
+## 1. Passing Props:
 
 Props in styled-components act the same way as props passed into any React component.
 
@@ -70,7 +68,7 @@ const getButtonStyles = (props) => {
 };
 ```
 
-<b>2. Dynamically Changing Elements:</b>
+## 2. Dynamically Changing Elements:
 
 We can dynamically change elements using styled-components as demonstrated below. As you can see in the example below we convert a `span` element to act as `link` passing the 'as' prop made available to us.
 
@@ -85,7 +83,7 @@ return <CustomText as='a'>CustomText is now changed to a link!</CustomText>;
 
 Now, although `CustomText` is only a span, it will behave like a link.
 
-<b>3. Leveraging Themes:</b>
+## 3. Leveraging Themes:
 
 Themes allow us to be consistent by making styles available to all our different components. We can now define a common style and apply it to any component we want.
 

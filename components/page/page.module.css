@@ -39,7 +39,7 @@
 }
 
 .title {
-  margin-left: var(--gap-half);
+  margin-left: var(--gap-quarter);
 }
 
 @media (max-width: 1076px) {

@@ -20,15 +20,10 @@ There can be a significant negative impact on a webpage if images are not optimi
 ## Some Features of Image Component
 
 - The major talking point of the Image Component is that it avoids shipping large images to devices with a smaller viewport (where the larger images might take more time to load).
-
 - Automatic Image Optimization works with multiple sources. The image doesn't have to be a local asset, instead, can be pulled from an external data source in real-time, like a CMS. How?
-
 - The Image Component doesn't optimize images during build time. Instead, it optimizes images in real-time or when in demand. Optimizing images during build time can increase the build time drastically and hence Next.js avoids that.
-
 - Lazy loading is achieved. Lazy Loading simply means that only the images that are in the viewport will be loaded. Subsequent images load as they are scrolled into the viewport.
-
 - Images are always rendered in such a way as to avoid Cumulative Layout Shift, a Core Web Vital that Google is going to use in search ranking.
-
 - Cumulative Layout Shift is often caused when visible elements are forced to move because another element was suddenly added to the page or resized.
 
 ## The Image Component improves application performance
@@ -41,7 +36,9 @@ The Image Component with its simple and intuitive API will bring out great devel
 
 Adding the Image Component to your application is as simple as importing the `next/image` component like so:
 
-```js {1}
+<!-- ```js {1} -->
+
+```js
 import Image from 'next/image'
 
 function Cats() {
@@ -59,9 +56,7 @@ export default Cats
 
 ### Some Required Props
 
-<ol>
-
-<li> <u>src</u> - src is the path or URL to the source image. When using an external URL or when pulling out the image from an external source, you must add it to domains in next.config.js like so:
+1. `src` - src is the path or URL to the source image. When using an external URL or when pulling out the image from an external source, you must add it to domains in next.config.js like so:
 
 ```js
 module.exports = {
@@ -73,51 +68,22 @@ module.exports = {
 
 This enables us to optimize images hosted on an external website, using an absolute URL for the image src.
 
-</li>
-
-<li> <u>width</u> - The width of the image, in pixels. It is required unless layout="fill".
-
-</li>
-
-<li> <u>height</u> - The height of the image, in pixels. It is required unless layout="fill"`.
-
-</li>
-
-</ol>
+2. `width` - The width of the image, in pixels. It is required unless layout="fill".
+3. `height` - The height of the image, in pixels. It is required unless layout="fill"`.
 
 ## Some Optional Props
 
 The following Image Component props are optional:
 
-<ol>
-
-<li> <u>Layout:</u> The layout property of an image is used to react to changes in the viewport size. Listed below are the layout properties we have in Next.js Image Component.
-
-<ol>
+1. <u>Layout</u>: The layout property of an image is used to react to changes in the viewport size. Listed below are the layout properties we have in Next.js Image Component.
 
 - Fixed: With a fixed layout, the image dimensions are constant as the viewport changes (no responsivenes).
-
 - Intrinsic: The intrinsic layout is quite different. The image will only scale its dimensions down for smaller viewports but the same image will maintain its original dimensions for larger viewports.
-
 - Responsive: With the responsive property, the image will scale its dimensions to fit the viewport. The images will be scaled down for smaller viewports (such as mobile, phablets) and scaled up for larger viewports (such as desktops, laptops).
-
 - Fill: With the fill property, the image will stretch to the dimensions of the parent element.
 
-</ol>
-
-</li>
-
-<li> <u>Quality:</u> Quality prop refers to the quality of the optimized image to be displayed. It is an integer value between 1 to 100. 100 is the best quality while 0 being the worst. The default value is 75.
-
-</li>
-
-<br />
-
-<li> <u>Priority:</u> Priority is a boolean value. If true, the image will be considered as a high priority and will be preloaded. If false, the image will have a default priority.
-
-</li>
-
-</ol>
+2. <u>Quality</u>: Quality prop refers to the quality of the optimized image to be displayed. It is an integer value between 1 to 100. 100 is the best quality while 0 being the worst. The default value is 75.
+3. <u>Priority</u>: Priority is a boolean value. If true, the image will be considered as a high priority and will be preloaded. If false, the image will have a default priority.
 
 ## Caching in Image Component
 

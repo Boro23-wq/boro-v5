@@ -22,12 +22,12 @@ Very simply, micro-frontend allows multiple development teams to work on the sam
 
 There are couple of terms that we need to define before we can move further ahead.
 
-- <u>Host:</u> A host is a build/module initialized first during a page load. A host can be termed as
+- <u>Host</u>: A host is a build/module initialized first during a page load. A host can be termed as
   a provider.
-- <u>Remote:</u> A remote is another build that consumes some part of the host. They can also be referred
+- <u>Remote</u>: A remote is another build that consumes some part of the host. They can also be referred
   to as consumers.
 
-**_Note:_** All applications can be both remote and host, providers, and consumers of any other federated module in the system.
+<u>Note:</u> All applications can be both remote and host, providers, and consumers of any other federated module in the system.
 
 Furthermore, we need to know another concept of overriding modules. For example, if you're importing a React component that ships along with the entire React code, the local build won't download the React code again, instead it will overwrite the React code and only import the essential component code. This helps the local build to avoid downloading the already existing dependencies.
 
@@ -92,7 +92,9 @@ Go ahead and paste the code below inside the `next.config.js` file. All this con
 
 <!-- // ```js{15}:next.config.js -->
 
-```js:next.config.js
+<!-- ```js:next.config.js -->
+
+```js
 const {
   withModuleFederation,
   MergeRuntime
@@ -131,7 +133,9 @@ Copy the code below into the `_document.js` file. The file will enable `patchSha
 
 <!-- ```js{13}:_document.js -->
 
-```js:_document.js
+<!-- ```js:_document.js -->
+
+```js
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { patchSharing } from '@module-federation/nextjs-mf'
 
@@ -162,7 +166,9 @@ Now the next step is to actually create the component that we will share with an
 
 Now go ahead and copy the following code inside the Header component that we just built:
 
-```js:components/Header.jsx
+<!-- ```js:components/Header.jsx -->
+
+```js
 const Header = () => (
   <div
     style={{
@@ -184,7 +190,9 @@ export default Header
 
 The only way to show up this component on our application is to import it inside the index.js file which is the entry point of our Next.js application. Go ahead and import the component like so:
 
-```js:index.js
+<!-- ```js:index.js -->
+
+```js
 import Head from 'next/head'
 
 const Header = (await import('home/Header')).default
@@ -213,7 +221,9 @@ const Home = () => (
 
 We have one more step before we can create our second application. We need to export the `Header.jsx` component inside the "exposes" object that we defined earlier inside the `next.config.js` file.
 
-```js:next.config.js
+<!-- ```js:next.config.js -->
+
+```js
 module.exports = {
       exposes: {
         "./Header": "./components/Header",
@@ -245,7 +255,9 @@ The above command will upgrade the port to 3001 (to avoid port clashes) and it w
 
 <!-- ```js{4}:next.config.js -->
 
-```js:next.config.js
+<!-- ```js:next.config.js -->
+
+```js
 module.exports = {
   webpack: (config, options) => {
     // additional config
@@ -263,7 +275,9 @@ Notice you will also have a `_document.js` inside the pages directory. Uncomment
 
 <!-- ```js{10}:index.js -->
 
-```js:index.js
+<!-- ```js:index.js -->
+
+```js
 const Header = (await import('home/Header')).default
 
 const Home = () => (

@@ -44,19 +44,16 @@ A Jamstack architecture can bring all sorts of benefits to the sites and project
 ### Security
 
 - The JAMstack mitigates the need for servers and systems to ossify against attack.
-
 - Serving pages and assets as pre-generated files allows read-only hosting, reducing attack vectors.
 
 ### Scalability
 
 - JAMstack can deal with heavy traffic loads using logic for caching resources. Sites are served entirely from a CDN and there is no complex logic or workflow to determine what assets can be cached and when.
-
 - JAMstack sites can be cached inside a CDN enabling simpler deployments, built-in redundancy, and increased load capacity.
 
 ### Performance
 
 - Page loading speeds have an impact on user experience and conversion rates. JAMstack sites remove the need to generate page views on a server at request time through pre-generating pages during the build.
-
 - With all the pages already available on a CDN ready to be served; high performance is met without introducing expensive or complex infrastructure.
 
 ### Developer Experience
