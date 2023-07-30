@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "lint": "eslint . && prettier --write '**/*.js' --loglevel warn",
-    "dev": "cross-env NODE_OPTIONS='--openssl-legacy-provider' next -p 3003",
+    "dev": "next -p 3003",
     "build": "next build",
     "rss": "node lib/rss",
     "new": "node lib/db"
@@ -15,7 +15,6 @@
     "@reach/dialog": "^0.10.5",
     "classnames": "^2.2.6",
     "cmdk": "^0.0.4",
-    "cross-env": "^7.0.3",
     "intersection-observer": "^0.7.0",
     "lodash.debounce": "^4.0.8",
     "match-sorter": "^4.0.2",
@@ -31,7 +30,7 @@
   "devDependencies": {
     "@types/body-scroll-lock": "^2.6.1",
     "@types/classnames": "^2.2.10",
-    "@types/lodash.debounce": "^4.0.6",
+    "@types/lodash.debounce": "^4.0.7",
     "@types/match-sorter": "^4.0.0",
     "@types/nprogress": "^0.2.0",
     "@types/react": "^16.9.23",
