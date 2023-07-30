@@ -1,6 +1,9 @@
 {
   "name": "blog",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "lint": "eslint . && prettier --write '**/*.js' --loglevel warn",
     "start": "NODE_OPTIONS=--openssl-legacy-provider next dev",
