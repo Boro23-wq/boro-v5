@@ -10,7 +10,7 @@ const ArticleEntry = ({ title, image, href, comment, description, type }) => {
       <div>
         <p className={cn(styles.title, 'clamp')}>{title}</p>
         <p className={cn(styles.description, 'clamp')}>{description}</p>
-        <p className={styles.type}>{type}</p>
+        {/* <p className={styles.type}>{type}</p> */}
       </div>
     </Link>
   )

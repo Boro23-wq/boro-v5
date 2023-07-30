@@ -10,7 +10,7 @@
 }
 
 .footer {
-  border-top: 1px solid var(--lighter-gray);
+  border-top: 1.75px solid var(--hr);
   position: relative;
   height: var(--footer-height);
   width: calc(100% + var(--body-margin-right) + var(--body-margin-left));

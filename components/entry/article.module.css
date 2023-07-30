@@ -35,9 +35,12 @@
 }
 
 .type {
-  background-color: var(--lighter-gray);
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  border: 1px solid var(--light-gray);
   width: fit-content;
-  padding: 0.05rem 0.5rem 0.25rem 0.5rem;
+  padding: 0 0.5rem 0.25rem 0.5rem;
   margin-top: 0.25rem;
   border-radius: var(--gap-quarter);
 }
