@@ -1,5 +1,5 @@
 import Icon from '@components/icon'
 
-const ArrowRight = `<path d="M20 11.603c0-.335-.147-.687-.376-.907l-5.303-5.304c-.262-.261-.572-.392-.867-.392-.727 0-1.209.498-1.209 1.16 0 .376.155.662.384.883l1.863 1.863 1.684 1.56-1.757-.097H5.283c-.768 0-1.283.498-1.283 1.234 0 .735.515 1.225 1.283 1.225h9.136l1.765-.09-1.692 1.553-1.863 1.855c-.22.229-.384.515-.384.883 0 .662.482 1.168 1.21 1.168.294 0 .596-.13.857-.384l5.312-5.311c.229-.221.376-.572.376-.9z"/>`
+const ArrowRight = `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="var(--gray)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>`
 
 export default Icon(ArrowRight)

@@ -151,16 +151,16 @@ thead {
 
 em {
   font-family: var(--font-italic);
-  font-size: 1rem;
-  font-weight: 200;
+  font-size: 1.05rem;
 }
 
 p,
 li {
-  font-size: 0.92rem;
+  font-size: 0.975rem;
   letter-spacing: normal;
   font-weight: 300;
   list-style-position: outside;
+  line-height: 1.65rem;
 }
 
 article {
@@ -173,10 +173,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: 0.925rem;
+  font-size: 1rem;
   font-family: var(--font-heading);
   font-weight: 500;
-  line-height: 1.75;
+  line-height: 1.5;
 }
 
 hr {

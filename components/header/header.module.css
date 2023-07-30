@@ -49,8 +49,9 @@
 
 .content {
   overflow: auto;
+  font-family: var(--font-sans);
   color: var(--gray-alpha);
-  font-weight: 300;
+  font-weight: 400;
   margin-left: var(--gap-double);
 }
 

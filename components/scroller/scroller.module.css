@@ -24,15 +24,15 @@
 }
 
 .link {
-  font-size: 0.95rem;
+  font-size: 0.975rem;
   font-family: var(--font-sans);
   font-weight: 300;
 }
 
 .description {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-family: var(--font-sans);
   color: var(--light-gray);
   margin-top: 0;
-  line-height: 1.27rem;
+  line-height: 1.425rem;
 }

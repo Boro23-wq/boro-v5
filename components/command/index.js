@@ -63,7 +63,7 @@ const CommandMenu = memo(() => {
       'g h': () => router.push('/'),
       'g s': () => router.push('/social'),
       // Collections
-      'g r': () => router.push('/reading'),
+      'g a': () => router.push('/articles'),
       'g p': () => router.push('/projects'),
       // Social
       'g t': () => () => window.open('https://twitter.com/sdotboro', '_blank')
@@ -241,6 +241,7 @@ const DefaultItems = () => {
 
       {/* <Group title="Collection"> */}
       <Item value="Projects" keybind="g p" />
+      <Item value="Articles" keybind="g a" />
       {/* </Group> */}
     </>
   )

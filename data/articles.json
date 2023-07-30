@@ -1,0 +1,36 @@
+{
+  "schema": [
+    {
+      "name": "article",
+      "color": "blue"
+    },
+    {
+      "name": "blog",
+      "color": "red"
+    },
+    {
+      "name": "video",
+      "color": "indigo"
+    }
+  ],
+  "data": [
+    {
+      "title": "Before You memo()",
+      "description": "Rendering optimizations that come naturally.",
+      "url": "https://overreacted.io/before-you-memo/",
+      "key": "blog"
+    },
+    {
+      "title": "Inversion of control",
+      "description": "Make code less nightmare to use and maintain.",
+      "url": "https://kentcdodds.com/blog/inversion-of-control",
+      "key": "blog"
+    },
+    {
+      "title": "Next.js rendering",
+      "description": "What is SSR, SSG, CSR, and ISR?",
+      "url": "https://pokedexwnext.netlify.app/",
+      "key": "demo"
+    }
+  ]
+}

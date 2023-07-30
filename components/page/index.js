@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import Head from '@components/head'
 import Header from '@components/header'
 import Footer from '@components/footer'
-import ArrowLeft from '@components/icons/arrow-left'
+import ArrowBendLeft from '@components/icons/arrow-bend-left'
 
 import styles from './page.module.css'
 
@@ -16,7 +16,7 @@ const Page = ({
   showHeaderTitle = true,
   children
 }) => {
-  const titlesToRenderHomeLink = ['Blog', 'Social', 'Projects']
+  const titlesToRenderHomeLink = ['Blog', 'Social', 'Projects', 'Articles']
   const shouldRenderHomeLink = titlesToRenderHomeLink.includes(title)
   const router = useRouter()
 
@@ -32,13 +32,14 @@ const Page = ({
         image={image}
       />
 
-      {header && <Header title={showHeaderTitle && title !== 'Home'} />}
+      {header && <Header title={title !== 'Home' && title} />}
+
       <main className={styles.main}>
         <div className={styles.grid}>
           {shouldRenderHomeLink && (
             <nav className={styles.container}>
               <div onClick={() => goTo('/')} className={styles.nav}>
-                <ArrowLeft />
+                <ArrowBendLeft />
                 <em className={styles.title}>Home</em>
               </div>
             </nav>
@@ -47,7 +48,7 @@ const Page = ({
           {!shouldRenderHomeLink && title !== 'Home' && (
             <nav className={styles.container}>
               <div onClick={() => goTo('/blog')} className={styles.nav}>
-                <ArrowLeft />
+                <ArrowBendLeft />
                 <em className={styles.title}>Blog</em>
               </div>
             </nav>
@@ -55,6 +56,7 @@ const Page = ({
           <article className={styles.article}>{children}</article>
         </div>
       </main>
+
       {footer && <Footer />}
     </div>
   )

@@ -19,12 +19,33 @@
   font-size: 0.95em;
   line-height: 1.4;
   /* margin-bottom: var(--gap-half); */
-  transition: color var(--transition);
+  /* transition: color var(--transition); */
 }
 
 .old,
 .new {
+  display: flex;
+  align-items: center;
   font-weight: 300;
+  margin-bottom: 0.3rem;
+}
+
+.new > p {
+  margin: 0 0.25rem 0 0;
+  color: var(--gray);
+}
+
+.old > p {
+  margin: 0 0 0 0.25rem;
+  color: var(--gray);
+}
+
+.old {
+  justify-content: flex-start;
+}
+
+.new {
+  justify-content: flex-end;
 }
 
 .previous:hover,
