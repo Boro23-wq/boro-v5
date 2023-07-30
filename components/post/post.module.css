@@ -25,5 +25,5 @@
   flex-grow: 1; /* Make the HR take all available space */
   margin-left: 10px; /* Add some space between the year and HR */
   border: none;
-  border-top: 1px solid var(--lighter-gray); /* Add a border on top */
+  border-top: 1.75px solid var(--hr); /* Add a border on top */
 }
