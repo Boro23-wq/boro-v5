@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 
 const BASE_URL = `https://boro.im`
 const defaultOgImage =
-  'https://res.cloudinary.com/dsdlhtnpw/image/upload/v1572673557/og-image_budbm8.png'
+  'https://raw.githubusercontent.com/Boro23-wq/boro-v5/master/public/og.png'
 const useCurrentPath = () => useRouter().asPath.split('?')[0]
 
 const Head = ({
@@ -63,11 +63,7 @@ const Head = ({
       <link rel="manifest" href="/favicons/manifest.json" />
       <meta name="theme-color" content="#000000" />
       <link rel="mask-icon" href="/favicons/pinned.svg" color="#000000" />
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/favicons/apple-touch-icon.png"
-      />
+      <link rel="apple-icon" sizes="192x192" href="/favicons/apple-icon.png" />
 
       {/* Dynamic favicon */}
       {!systemTheme || systemTheme === 'dark' ? (
