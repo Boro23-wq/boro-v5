@@ -71,6 +71,7 @@
   --header-bg: rgba(19, 20, 21, 0.45);
   --gray-alpha: rgba(255, 255, 255, 0.5);
   --selection: rgba(255, 255, 255, 0.99);
+  --command-bg: rgb(24, 25, 25);
   --hr: #303030;
 
   /* Syntax Highlighting */
@@ -94,6 +95,7 @@
   --header-bg: rgba(255, 255, 255, 0.8);
   --gray-alpha: rgba(19, 20, 21, 0.5);
   --selection: rgba(0, 0, 0, 0.99);
+  --command-bg: #fff;
   --hr: #eaeaea;
 
   /* Syntax Highlighting */
