@@ -18,8 +18,9 @@
   font-weight: 300;
   font-size: 0.95em;
   line-height: 1.4;
+  color: var(--gray);
+  transition: color var(--transition);
   /* margin-bottom: var(--gap-half); */
-  /* transition: color var(--transition); */
 }
 
 .old,
@@ -30,16 +31,6 @@
   margin-bottom: 0.3rem;
 }
 
-.new > p {
-  margin: 0 0.25rem 0 0;
-  color: var(--gray);
-}
-
-.old > p {
-  margin: 0 0 0 0.25rem;
-  color: var(--gray);
-}
-
 .old {
   justify-content: flex-start;
 }
@@ -48,10 +39,31 @@
   justify-content: flex-end;
 }
 
-.previous:hover,
-.next:hover,
-.title:hover,
-.previous:focus,
-.next:focus {
+.text {
+  margin: 0 0.15rem 0 0.15rem;
+  color: var(--gray);
+  transition: color var(--transition);
+}
+
+.arrowR,
+.arrowL {
+  display: flex;
+  align-items: center;
+  transition: translate var(--transition);
+}
+
+.link:hover .title {
   color: var(--fg);
+}
+
+.link:hover .text {
+  color: var(--fg);
+}
+
+.link:hover .arrowR {
+  translate: 0.25rem;
+}
+
+.link:hover .arrowL {
+  translate: -0.25rem;
 }

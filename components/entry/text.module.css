@@ -62,6 +62,6 @@
   }
 
   .link {
-    padding-left: var(--gap);
+    padding-left: var(--gap-three-quarters);
   }
 }
