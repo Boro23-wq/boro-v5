@@ -1,5 +1,5 @@
 .section {
-  border: 2px solid var(--lightest-gray);
+  border: 2px solid var(--project-border);
   border-radius: var(--radius);
   cursor: pointer;
   margin-bottom: var(--gap);
