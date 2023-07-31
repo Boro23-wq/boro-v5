@@ -1,37 +1,26 @@
 import cn from 'classnames'
-import { useInView } from 'react-intersection-observer'
 import 'intersection-observer'
 
 import styles from './entry.module.css'
+import Link from '@components/link'
 
 const Entry = ({ title, description, image, href, position }) => {
-  const [ref, inView] = useInView({ triggerOnce: true })
-
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      ref={ref}
-      className={cn(styles.link, { [styles.active]: !image })}
-      title={`${title} - ${description}`}
-    >
-      <section
-        style={{
-          backgroundImage: image
-            ? !inView
-              ? 'none'
-              : `url('/projects/${encodeURIComponent(image)}')` // Correct URL to the image in public/projects folder
-            : 'none',
-          backgroundPosition: position ? position : 'center'
-        }}
-      >
-        <div>
+    <Link href={href} external>
+      <section className={styles.section}>
+        <img className={styles.image} src={`/projects/${image}`} />
+        <div className={styles.overlay} />
+        <div className={styles.text}>
           <p className={cn(styles.title, 'clamp')}>{title}</p>
           <p className={cn(styles.description, 'clamp')}>{description}</p>
+
+          <div className={styles.tags}>
+            <p className={styles.tag}>∙ API</p>
+            <p className={styles.tag}>∙ Design</p>
+          </div>
         </div>
       </section>
-    </a>
+    </Link>
   )
 }
 
