@@ -7,6 +7,7 @@ import { data } from '@data/articles.json'
 
 const Reading = () => {
   const { items } = useData(data)
+  // const keySet = new Set(data.map(item => item.key))
 
   return (
     <Page

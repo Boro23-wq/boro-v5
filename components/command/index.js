@@ -17,7 +17,9 @@ import {
 import { Command as CommandIcon } from '@components/icons'
 
 import tinykeys from '@lib/tinykeys'
+import useData from '@lib/use-data'
 import postMeta from '@data/blog.json'
+import { data } from '@data/articles.json'
 
 import styles from './command.module.css'
 import headerStyles from '@components/header/header.module.css'
@@ -137,7 +139,9 @@ const CommandMenu = memo(() => {
                   Items === ThemeItems
                     ? 'Select a theme...'
                     : Items === BlogItems
-                    ? 'Search for posts...'
+                    ? 'Search for blogs...'
+                    : Items === ArticleItems
+                    ? 'Search for articles...'
                     : 'Type a command or search...'
                 }
               />
@@ -202,6 +206,21 @@ const BlogItems = () => {
   })
 }
 
+const ArticleItems = () => {
+  const router = useRouter()
+  const { items } = useData(data)
+
+  return items.map((article, i) => {
+    return (
+      <Item
+        key={`article-item-${article.title}-${i}`}
+        value={article.title}
+        callback={() => router.push(`${article.url}`)}
+      />
+    )
+  })
+}
+
 // const Label = ({ title, values, search }) => {
 //   return (
 //     <div className={styles.label} aria-hidden>
@@ -242,6 +261,11 @@ const DefaultItems = () => {
       {/* <Group title="Collection"> */}
       <Item value="Projects" keybind="g p" />
       <Item value="Articles" keybind="g a" />
+      <Item
+        value="Search article"
+        closeOnCallback={false}
+        callback={() => setPages([...pages, ArticleItems])}
+      />
       {/* </Group> */}
     </>
   )

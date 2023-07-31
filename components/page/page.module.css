@@ -39,7 +39,12 @@
 }
 
 .title {
+  font-size: 1.075rem;
   margin-left: var(--gap-quarter);
+}
+
+.title:hover {
+  color: var(--fg);
 }
 
 @media (max-width: 1076px) {

@@ -39,7 +39,7 @@ const Page = ({
           {shouldRenderHomeLink && (
             <nav className={styles.container}>
               <div onClick={() => goTo('/')} className={styles.nav}>
-                <ArrowBendLeft />
+                <ArrowBendLeft className={styles.icon} />
                 <em className={styles.title}>Home</em>
               </div>
             </nav>
