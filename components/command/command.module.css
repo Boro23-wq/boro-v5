@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   z-index: 999;
-  --overlay: rgba(0, 0, 0, 0.1);
+  --overlay: rgba(0, 0, 0, 0.5);
   background: var(--overlay);
   --padding: 0 20px;
   opacity: 0;
@@ -17,7 +17,7 @@
 }
 
 :global(html[data-theme='light']) .screen {
-  --overlay: rgba(0, 0, 0, 0.1);
+  --overlay: rgba(0, 0, 0, 0.5);
 }
 
 .dialog-content {

@@ -8,18 +8,18 @@ import styles from './article.module.css'
 
 const ArticleEntry = ({ title, image, href, comment, description, type }) => {
   return (
-      <Link href={href} external title={`${title}`} className={styles.link}>
-        <div className={styles.container}>
-          <div className={styles.text}>
-            <p className={cn(styles.title, 'clamp')}>{title}</p>
-            <p className={cn(styles.description, 'clamp')}>{description}</p>
-          </div>
-          {/* <p className={styles.type}>{type}</p> */}
-          <div className={styles.arrow}>
-            <ArrowUpRight />
-          </div>
+    <Link href={href} external title={`${title}`} className={styles.link}>
+      <div className={styles.container}>
+        <div className={styles.text}>
+          <p className={cn(styles.title, 'clamp')}>{title}</p>
+          <p className={cn(styles.description, 'clamp')}>{description}</p>
         </div>
-      </Link>
+        {/* <p className={styles.type}>{type}</p> */}
+        <div className={styles.arrow}>
+          <ArrowUpRight />
+        </div>
+      </div>
+    </Link>
   )
 }
 
