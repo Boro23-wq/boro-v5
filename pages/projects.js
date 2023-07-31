@@ -10,6 +10,7 @@ const Projects = () => {
         image="carely.png"
         href="https://github.com/Boro23-wq/cs-673-frontend"
         position="top"
+        tags={['API', 'UI', 'Next.js']}
       />
 
       <Entry
@@ -17,6 +18,7 @@ const Projects = () => {
         description="Demonstrating CSR, SSR, SSG, and ISR."
         image="pokedex.png"
         href="https://github.com/Boro23-wq/Pokedex-w-Next"
+        tags={['Next.js', 'Data fetching']}
       />
 
       <Entry
@@ -24,6 +26,7 @@ const Projects = () => {
         description="Snippets sharing platform."
         image="ss.png"
         href="https://github.com/Boro23-wq/Shareable-Snippets"
+        tags={['React.js', 'OAuth', 'Sharing']}
       />
 
       <Entry
@@ -31,6 +34,7 @@ const Projects = () => {
         description="Homepage design concept built for a chat application."
         image="chat.png"
         href="https://chat-app-homepage.webflow.io/"
+        tags={['UI', 'UX', 'Figma', 'Webflow', 'Prototype']}
       />
 
       <Entry
@@ -38,6 +42,7 @@ const Projects = () => {
         description="Website design concept for remote team collaboration."
         image="team.png"
         href="https://team-app-5efacf.webflow.io/"
+        tags={['UI', 'UX', 'Figma', 'Webflow', 'Prototype']}
       />
 
       <Entry
@@ -46,6 +51,7 @@ const Projects = () => {
         image="stopify.png"
         href="https://boro-ui-ux.webflow.io/project/stopify-ecommerce"
         position="bottom"
+        tags={['UI', 'UX', 'Figma', 'Webflow', 'Prototype']}
       />
     </Page>
   )
