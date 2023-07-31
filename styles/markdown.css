@@ -56,10 +56,6 @@ article ul li.reset .check {
   margin-right: 0.51rem;
 }
 
-li::marker {
-  font-weight: 400;
-}
-
 /* Checkbox */
 input[type='checkbox'] {
   vertical-align: middle;

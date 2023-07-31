@@ -3,7 +3,7 @@ import ArticleEntry from '@components/entry/article'
 
 // Data
 import useData from '@lib/use-data'
-import { data } from '@data/articles.json'
+import { data } from '@data/article.json'
 
 const Reading = () => {
   const { items } = useData(data)

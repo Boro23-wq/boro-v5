@@ -1,4 +1,12 @@
-import React, { useEffect, useRef, useMemo, useState, memo } from 'react'
+import {
+  useEffect,
+  useRef,
+  useMemo,
+  useState,
+  memo,
+  createContext,
+  useContext
+} from 'react'
 import cn from 'classnames'
 import { useRouter } from 'next/router'
 import useDelayedRender from 'use-delayed-render'
@@ -19,14 +27,15 @@ import { Command as CommandIcon } from '@components/icons'
 import tinykeys from '@lib/tinykeys'
 import useData from '@lib/use-data'
 import postMeta from '@data/blog.json'
-import { data } from '@data/articles.json'
+import projectMeta from '@data/project.json'
+import { data } from '@data/article.json'
 
 import styles from './command.module.css'
 import headerStyles from '@components/header/header.module.css'
 import { useTheme } from 'next-themes'
 
-const CommandData = React.createContext({})
-const useCommandData = () => React.useContext(CommandData)
+const CommandData = createContext({})
+const useCommandData = () => useContext(CommandData)
 
 const CommandMenu = memo(() => {
   const listRef = useRef()
@@ -66,7 +75,7 @@ const CommandMenu = memo(() => {
       'g s': () => router.push('/social'),
       // Collections
       'g a': () => router.push('/articles'),
-      'g p': () => router.push('/projects'),
+      'g p': () => router.push('/project'),
       // Social
       'g t': () => () => window.open('https://twitter.com/sdotboro', '_blank')
     }
@@ -142,6 +151,8 @@ const CommandMenu = memo(() => {
                     ? 'Search for blogs...'
                     : Items === ArticleItems
                     ? 'Search for articles...'
+                    : Items === ProjectItems
+                    ? 'Search for projects'
                     : 'Type a command or search...'
                 }
               />
@@ -206,6 +217,22 @@ const BlogItems = () => {
   })
 }
 
+const ProjectItems = () => {
+  const router = useRouter()
+
+  return projectMeta.map((project, i) => {
+    return (
+      <Item
+        key={`project-item-${project.title}-${i}`}
+        value={project.title}
+        callback={() =>
+          router.push('/project/[slug]', `/project/${project.slug}`)
+        }
+      />
+    )
+  })
+}
+
 const ArticleItems = () => {
   const router = useRouter()
   const { items } = useData(data)
@@ -247,7 +274,7 @@ const DefaultItems = () => {
       <Item value="Social" keybind="g s" />
       {/* </Group> */}
 
-      <Item value="Themes" keybind="t" closeOnCallback={false} />
+      <Item value="Theme" keybind="t" closeOnCallback={false} />
 
       {/* <Group title="Blog"> */}
       <Item value="Blog" keybind="g b" />
@@ -259,8 +286,13 @@ const DefaultItems = () => {
       {/* </Group> */}
 
       {/* <Group title="Collection"> */}
-      <Item value="Projects" keybind="g p" />
-      <Item value="Articles" keybind="g a" />
+      <Item value="Project" keybind="g p" />
+      <Item
+        value="Search project"
+        closeOnCallback={false}
+        callback={() => setPages([...pages, ProjectItems])}
+      />
+      <Item value="Article" keybind="g a" />
       <Item
         value="Search article"
         closeOnCallback={false}

@@ -1,15 +1,14 @@
 import cn from 'classnames'
 import 'intersection-observer'
+import Link from '@components/link'
 
 import styles from './entry.module.css'
-import Link from '@components/link'
-import ArrowRight from '@components/icons/arrow-right'
 
-const Entry = ({ title, description, image, href, position, tags }) => {
+const Entry = ({ title, description, image, href, as, position, tags }) => {
   return (
-    <Link href={href} external>
+    <Link href={href} as={as} external={!as} title={`${title}`}>
       <section className={styles.section}>
-        <img className={styles.image} src={`/projects/${image}`} />
+        <img className={styles.image} src={`/projects/cover/${image}`} />
         <div className={styles.overlay} />
         <div className={styles.text}>
           <p className={cn(styles.title, 'clamp')}>{title}</p>

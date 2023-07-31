@@ -1,0 +1,29 @@
+.date {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--gray);
+}
+
+.title {
+  margin: 0;
+}
+
+.yearAndHr {
+  display: flex;
+  align-items: center;
+  margin-top: var(--gap-quarter);
+}
+
+.year {
+  font-size: 0.9rem;
+  white-space: nowrap;
+  color: var(--light-gray);
+}
+
+.yearHr {
+  flex-grow: 1; /* Make the HR take all available space */
+  margin-left: 10px; /* Add some space between the year and HR */
+  border: none;
+  border-top: 1.75px solid var(--hr); /* Add a border on top */
+}

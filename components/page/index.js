@@ -16,13 +16,15 @@ const Page = ({
   showHeaderTitle = true,
   children
 }) => {
-  const titlesToRenderHomeLink = ['Blog', 'Social', 'Projects', 'Articles']
+  const titlesToRenderHomeLink = ['Blog', 'Social', 'Project', 'Articles']
   const shouldRenderHomeLink = titlesToRenderHomeLink.includes(title)
   const router = useRouter()
 
   const goTo = route => {
     router.push(route)
   }
+
+  const pathName = router.pathname.split('/')[1]
 
   return (
     <div className={styles.wrapper}>
@@ -47,9 +49,11 @@ const Page = ({
 
           {!shouldRenderHomeLink && title !== 'Home' && (
             <nav className={styles.container}>
-              <div onClick={() => goTo('/blog')} className={styles.nav}>
+              <div onClick={() => goTo(`/${pathName}`)} className={styles.nav}>
                 <ArrowBendLeft />
-                <em className={styles.title}>Blog</em>
+                <em className={styles.title}>
+                  {pathName.charAt(0).toUpperCase() + pathName.slice(1)}
+                </em>
               </div>
             </nav>
           )}
