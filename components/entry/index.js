@@ -3,6 +3,7 @@ import 'intersection-observer'
 
 import styles from './entry.module.css'
 import Link from '@components/link'
+import ArrowRight from '@components/icons/arrow-right'
 
 const Entry = ({ title, description, image, href, position, tags }) => {
   return (
