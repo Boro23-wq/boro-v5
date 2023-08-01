@@ -45,6 +45,25 @@
   max-width: var(--main-content);
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.container,
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  color: var(--light-gray);
+  border: 1px solid var(--lighter-gray);
+  padding: 0.15rem var(--gap-half) 0.2rem var(--gap-half);
+  border-radius: 0.3rem;
+}
+
+.text > p {
+  margin: 0;
 }
 
 .content {

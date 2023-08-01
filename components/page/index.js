@@ -16,7 +16,7 @@ const Page = ({
   showHeaderTitle = true,
   children
 }) => {
-  const titlesToRenderHomeLink = ['Blog', 'Social', 'Project', 'Articles']
+  const titlesToRenderHomeLink = ['Blog', 'Social', 'Project', 'Articles', 404]
   const shouldRenderHomeLink = titlesToRenderHomeLink.includes(title)
   const router = useRouter()
 
@@ -49,7 +49,7 @@ const Page = ({
             </nav>
           )}
 
-          {!shouldRenderHomeLink && title !== 'Home' && (
+          {!shouldRenderHomeLink && title !== 'Home' && title !== 404 && (
             <nav className={styles.container}>
               <div onClick={() => goTo(`/${pathName}`)} className={styles.nav}>
                 <div className={styles.icon}>

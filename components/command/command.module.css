@@ -140,12 +140,11 @@
   display: flex;
   align-items: center;
   min-height: 5px;
-  color: var(--gray);
-  padding: var(--padding);
-  padding-top: 5px;
-  padding-bottom: 6px;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  color: var(--light-gray);
+  padding: var(--gap-half);
   font-size: 0.875rem;
-  background: var(--lighter-gray);
 }
 
 .container {

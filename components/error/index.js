@@ -1,7 +1,7 @@
 import Head from 'next/head'
-
 import Page from '@components/page'
 import Link from '@components/link'
+
 import styles from './error.module.css'
 
 const Error = ({ status }) => {
@@ -13,7 +13,9 @@ const Error = ({ status }) => {
 
       {status === 404 ? (
         <>
-          <p className={styles.heading}>This page cannot be found.</p>
+          <p className={styles.heading}>
+            Ths page you're looking for cannot be found.
+          </p>
 
           <p>
             <blockquote cite="http://www.aaronsw.com/weblog/visitingmit">

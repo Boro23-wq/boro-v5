@@ -18,8 +18,8 @@ import {
   CommandItem,
   CommandList,
   useCommand,
-  usePages
-  // CommandGroup
+  usePages,
+  CommandGroup
 } from 'cmdk'
 
 import { Command as CommandIcon } from '@components/icons'
@@ -248,57 +248,57 @@ const ArticleItems = () => {
   })
 }
 
-// const Label = ({ title, values, search }) => {
-//   return (
-//     <div className={styles.label} aria-hidden>
-//       {title}
-//     </div>
-//   )
-// }
+const Label = ({ title, values, search }) => {
+  return (
+    <div className={styles.label} aria-hidden>
+      {title}
+    </div>
+  )
+}
 
-// const Group = ({ children, title }) => {
-//   return (
-//     <CommandGroup heading={<Label title={title} />} className={styles.group}>
-//       {children}
-//     </CommandGroup>
-//   )
-// }
+const Group = ({ children, title }) => {
+  return (
+    <CommandGroup heading={<Label title={title} />} className={styles.group}>
+      {children}
+    </CommandGroup>
+  )
+}
 
 const DefaultItems = () => {
   const { setPages, pages } = useCommandData()
 
   return (
     <>
-      {/* <Group title="Navigation"> */}
-      <Item value="Home" keybind="g h" />
-      <Item value="Social" keybind="g s" />
-      {/* </Group> */}
-
       <Item value="Theme" keybind="t" closeOnCallback={false} />
 
-      {/* <Group title="Blog"> */}
-      <Item value="Blog" keybind="g b" />
-      <Item
-        value="Search blog"
-        closeOnCallback={false}
-        callback={() => setPages([...pages, BlogItems])}
-      />
-      {/* </Group> */}
+      <Group title="Navigation">
+        <Item value="Home" keybind="g h" />
+        <Item value="Social" keybind="g s" />
+      </Group>
 
-      {/* <Group title="Collection"> */}
-      <Item value="Project" keybind="g p" />
-      <Item
-        value="Search project"
-        closeOnCallback={false}
-        callback={() => setPages([...pages, ProjectItems])}
-      />
-      <Item value="Article" keybind="g a" />
-      <Item
-        value="Search article"
-        closeOnCallback={false}
-        callback={() => setPages([...pages, ArticleItems])}
-      />
-      {/* </Group> */}
+      <Group title="Blog">
+        <Item value="Blog" keybind="g b" />
+        <Item
+          value="Search blog"
+          closeOnCallback={false}
+          callback={() => setPages([...pages, BlogItems])}
+        />
+      </Group>
+
+      <Group title="Collection">
+        <Item value="Project" keybind="g p" />
+        <Item
+          value="Search project"
+          closeOnCallback={false}
+          callback={() => setPages([...pages, ProjectItems])}
+        />
+        <Item value="Article" keybind="g a" />
+        <Item
+          value="Search article"
+          closeOnCallback={false}
+          callback={() => setPages([...pages, ArticleItems])}
+        />
+      </Group>
     </>
   )
 }

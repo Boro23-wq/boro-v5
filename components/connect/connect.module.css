@@ -5,9 +5,9 @@
 .link {
   color: var(--bg);
   margin-right: var(--gap-three-quarters);
-  transition: color var(--transition);
+  transition: filter var(--transition);
 }
 
 .link:hover {
-  border-color: var(--fg);
+  filter: invert(2);
 }
