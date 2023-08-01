@@ -2,6 +2,11 @@
   margin-top: 0;
 }
 
+.links {
+  display: flex;
+  align-items: center;
+}
+
 .link {
   color: var(--bg);
   margin-right: var(--gap-three-quarters);
