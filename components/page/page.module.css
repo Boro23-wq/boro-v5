@@ -39,7 +39,7 @@
 }
 
 .title {
-  font-size: 1.075rem;
+  font-size: 1.15rem;
   margin-left: var(--gap-three-quarters);
   color: var(--gray);
   transition: color var(--transition);

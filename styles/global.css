@@ -143,10 +143,10 @@ body {
 }
 
 table {
-  font-size: 0.92rem;
+  font-size: 1rem;
   letter-spacing: normal;
   font-weight: 300;
-  line-height: 1.38rem;
+  line-height: 1.5rem;
 }
 
 thead {
@@ -156,16 +156,16 @@ thead {
 
 em {
   font-family: var(--font-italic);
-  font-size: 1.05rem;
+  font-size: 1.15rem;
 }
 
 p,
 li {
-  font-size: 0.975rem;
+  font-size: 1rem;
   letter-spacing: normal;
   font-weight: 300;
   list-style-position: outside;
-  line-height: 1.65rem;
+  line-height: 1.5;
 }
 
 article {
