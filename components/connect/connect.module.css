@@ -3,11 +3,11 @@
 }
 
 .link {
-  color: var(--gray);
-  margin-right: var(--gap-quarter);
+  color: var(--bg);
+  margin-right: var(--gap-three-quarters);
   transition: color var(--transition);
 }
 
 .link:hover {
-  color: var(--fg);
+  border-color: var(--fg);
 }

@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { GitHub, Mail, Twitter, Linkedin } from '@components/icons'
 import Link from '@components/link'
 
@@ -15,7 +13,7 @@ const ConnectData = () => {
         external
         className={styles.link}
       >
-        <GitHub size={22} />
+        <GitHub size={24} />
       </Link>
 
       <Link
@@ -23,15 +21,7 @@ const ConnectData = () => {
         external
         className={styles.link}
       >
-        <Twitter size={22} />
-      </Link>
-
-      <Link
-        href="https://linkedin.com/in/sintu-boro"
-        external
-        className={styles.link}
-      >
-        <Linkedin size={22} />
+        <Twitter size={24} />
       </Link>
 
       <Link
@@ -39,7 +29,15 @@ const ConnectData = () => {
         external
         className={styles.link}
       >
-        <Mail size={22} />
+        <Mail size={24} />
+      </Link>
+
+      <Link
+        href="https://linkedin.com/in/sintu-boro"
+        external
+        className={styles.link}
+      >
+        <Linkedin size={24} />
       </Link>
     </>
   )

@@ -41,7 +41,9 @@ const Page = ({
           {shouldRenderHomeLink && (
             <nav className={styles.container}>
               <div onClick={() => goTo('/')} className={styles.nav}>
-                <ArrowBendLeft className={styles.icon} />
+                <div className={styles.icon}>
+                  <ArrowBendLeft />
+                </div>
                 <em className={styles.title}>Home</em>
               </div>
             </nav>
@@ -50,7 +52,9 @@ const Page = ({
           {!shouldRenderHomeLink && title !== 'Home' && (
             <nav className={styles.container}>
               <div onClick={() => goTo(`/${pathName}`)} className={styles.nav}>
-                <ArrowBendLeft />
+                <div className={styles.icon}>
+                  <ArrowBendLeft />
+                </div>
                 <em className={styles.title}>
                   {pathName.charAt(0).toUpperCase() + pathName.slice(1)}
                 </em>

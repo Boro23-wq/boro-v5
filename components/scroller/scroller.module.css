@@ -5,8 +5,8 @@
 }
 
 .column {
-  width: 250px;
-  margin-right: var(--gap-three-quarters);
+  width: 192px;
+  margin-right: var(--gap);
 }
 
 .section {

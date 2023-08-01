@@ -40,7 +40,9 @@
 
 .title {
   font-size: 1.075rem;
-  margin-left: var(--gap-quarter);
+  margin-left: var(--gap-three-quarters);
+  color: var(--gray);
+  transition: color var(--transition);
 }
 
 .title:hover {

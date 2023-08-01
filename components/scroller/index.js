@@ -10,6 +10,7 @@ const Scroller = () => {
   return (
     <div>
       <div className={styles.stack}>
+        {/* blogs */}
         <div className={styles.column}>
           <h1 className={styles.section}>Blog</h1>
           <div>
@@ -47,6 +48,7 @@ const Scroller = () => {
           </div>
         </div>
 
+        {/* articles */}
         <div className={styles.column}>
           <h1 className={styles.section}>Articles</h1>
           <div>
@@ -67,6 +69,7 @@ const Scroller = () => {
               Rendering optimizations that come naturally.
             </p>
           </div>
+
           <div>
             <div className={styles.article}>
               <Link
@@ -101,6 +104,46 @@ const Scroller = () => {
             </div>
             <p className={styles.description}>
               What is SSR, SSG, CSR, and ISR?
+            </p>
+          </div>
+        </div>
+
+        {/* projects */}
+        <div className={styles.column}>
+          <h1 className={styles.section}>Projects</h1>
+          <div>
+            <div className={styles.article}>
+              <Link className={styles.link} underline href="/project/carely">
+                Carely
+              </Link>
+            </div>
+            <p className={styles.description}>
+              Easy care co-ordination and case management for patients.
+            </p>
+          </div>
+
+          <div>
+            <div className={styles.article}>
+              <Link
+                className={styles.link}
+                underline
+                href="/project/ui-ux-design"
+              >
+                UI/UX Design
+              </Link>
+            </div>
+            <p className={styles.description}>
+              My interation with web design and what I've built.
+            </p>
+          </div>
+          <div>
+            <div className={styles.article}>
+              <Link className={styles.link} external underline href="/project">
+                All projects
+              </Link>
+            </div>
+            <p className={styles.description}>
+              More design and development projects.
             </p>
           </div>
         </div>
