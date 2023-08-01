@@ -221,6 +221,7 @@ a.reset:focus {
 
 pre,
 code {
+  font-size: 0.9rem;
   font-family: var(--font-mono);
 }
 

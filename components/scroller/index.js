@@ -138,7 +138,7 @@ const Scroller = () => {
           </div>
           <div>
             <div className={styles.article}>
-              <Link className={styles.link} external underline href="/project">
+              <Link className={styles.link} underline href="/project">
                 All projects
               </Link>
             </div>
