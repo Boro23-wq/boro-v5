@@ -1,17 +1,19 @@
 ---
-title: UI/UX design
-description: Concepts built for a chat, remote team collaboration application, and powerful e-commerce mobile UI kit.
-image: ui-ux.png
-tags: ['UI', 'UX', 'Figma', 'Webflow', 'Prototype']
-date: 'July 14, 2020'
-slug: ui-ux-design
+title: Design principles
+date: 'August 02, 2023'
+slug: design-principles
+description: UI/UX design principles that will help you take design and craft them into beautiful interfaces and websites.
 ---
 
-I enrolled for a web design course offered by [Vako Shvili](https://www.vakoshvili.com/) that helped me learn about graphic design concepts like layout, typography, visual hierarchy, the art of color, how to use photos and many more.
+Perception, I believe, forms a fundamental aspect of great design. In the realm of design, it goes beyond mere skills or natural drawing talent; it largely revolves around the art of observation and how we perceive the world around us.
 
-## Key concepts about UI/UX design I learned
+> "Perception lies at the root of all creativity; learning how to see is the start of creativity." - Edward Prince
 
-## 1. Layout is king
+Drawing from my experience, I've a collection of valuable principles for crafting wonderful designs, which I apply every day. By incorporating these time-tested tricks and guidelines into the design process, one can undoubtedly enhance their ability to create better compositions.
+
+However, it's essential to acknowledge that these design concepts and principles work for me personally, but they may not necessarily be universally applicable. Each designer may find their unique approaches and techniques that resonate with their creative process. The key lies in exploring and discovering what works best for each individual.
+
+## 1. Layout
 
 ## The Power of Alignment and Grid
 
@@ -33,7 +35,7 @@ Another vital concept in good design is Proximity, which involves bringing relat
 
 <img src="/blog/design-principles/proximity.png" alt="Proximity" />
 
-## 2. Typography
+## 2. Typography and typefaces
 
 ## Infusing Personality into Typefaces
 
@@ -59,9 +61,7 @@ Ensuring adequate line height is crucial for readability and a comfortable readi
 
 <img src="/blog/design-principles/line_height.png" alt="Line height" />
 
-<u>TIP</u>: In most cases, for the body text, 140% (1.4 x font-size) is an excellent line height. Don't go over 180% unless you know what you're doing.
-
-## 3. The art of color
+## 3. Colors
 
 ## Drawing Inspiration from the Real World
 
@@ -77,7 +77,33 @@ An invaluable skill possessed by designers is the ability to fine-tune colors. T
 
 <img src="/blog/design-principles/fine-tuning.png" alt="Fine tuning" />
 
-## 4. Some useful design tricks
+## 4. Photography
+
+## Enhancing Design with Image Overlays
+
+Incorporating captivating photos into a design can significantly elevate its visual appeal. However, using images as backgrounds might compromise the readability of the content. Luckily, the solution lies in Image Overlays.
+
+<img src="/blog/design-principles/image-overlay.png" alt="Image overlay" />
+
+## Adding Depth with Tinting
+
+Another effective technique is called tinting, which involves applying a different color tint to the image overlay. To achieve this effect, a simple trick is to desaturate the image, converting it into black and white, and then adding a color fill. By choosing a specific color, the image obtains a pleasant tint of that hue.
+
+<img src="/blog/design-principles/tinting.png" alt="Tinting" />
+
+## The Art of Cropping
+
+Working with photos opens up the opportunity to utilize a popular design technique known as extreme crop. This involves removing certain parts of the model or object in the image, resulting in a bold and impactful visual composition.
+
+On the other hand, soft cropping offers a more subtle approach. Instead of having a hard edge, the image gracefully fades away or merges with the background color, imparting a gentle and seamless transition.
+
+Unboxing a photo takes this concept further, creating a three-dimensional space where the model or object coexists harmoniously with other elements on a page, fostering a compelling visual experience.
+
+<img src="/blog/design-principles/extreme-crop.png" alt="Extreme crop" />
+
+<img src="/blog/design-principles/soft-crop.png" alt="Soft crop" />
+
+## 5. Design tricks
 
 ## Harnessing the Power of Contrast
 
@@ -113,15 +139,14 @@ Visual tension brings a captivating allure to design. It can be achieved through
 
 <img src="/blog/design-principles/tension.png" alt="Tension" />
 
-## Resources:
+## The Importance of Consistency
 
-Following the above patterns and tricks I successfully launched a couple of responsive web pages to practice my design skills on the web. I worked my way from project briefing, to creating moodboards, wireframes, design and eventually created functional websites.
+Consistency stands as a core principle in design. Maintaining consistency throughout a design helps create a cohesive and harmonious visual experience. Avoiding inconsistencies, such as mixing isolated and boxed images or using disparate photo styles, ensures a polished and professional outcome.
 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="640" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F92TI04pfbgomMZGzZWCSV7%2FChat-App-Homepage-Design%3Ftype%3Ddesign%26node-id%3D107%253A17%26mode%3Ddesign%26t%3Ddm2DDH6mtvt08TBl-1" allowfullscreen></iframe>
+## Conclusion
 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="640" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FCvnCQy0pfc4tVlEB66cgRN%2FTeam-App-Design%3Ftype%3Ddesign%26node-id%3D304%253A210%26mode%3Ddesign%26t%3DOeJqFGzRXXRPF0Pl-1" allowfullscreen></iframe>
+In conclusion, design principles serve as valuable tools that can elevate our creations from ordinary to extraordinary. By embracing perception and honing our observation skills, we can infuse our designs with a deeper sense of creativity.
 
-- [Chat](https://chat-app-homepage.webflow.io/) - Homepage design concept built for a chat application. The design mockups and high fidelity wireframes were built in Figma and later moved on to build the responsive web page on Webflow.
-- [Team](https://team-app-5efacf.webflow.io/) - Website design concept for remote team collaboration. It includes a minimal and powerful blog. Built the website in Webflow, one of the best CMS for blog hosting. Want to collaborate with your team remotely?
-- [Stopify](https://boro-ui-ux.webflow.io/project/stopify-ecommerce) - Powerful Ecommerce Mobile UI Kit with clean and elegant design. The prototype and micro-interactions are built using Figma. Stopify is the one-stop spot for electronic essentials. Designed to kickstart your e-commerce almost instantly.
-- My [portfolio.](https://boro-ui-ux.webflow.io/)
+We've discovered the importance of alignment, visual hierarchy, typography, colors, and various design tricks. These techniques offer practical ways to enhance our compositions and create captivating visuals.
+
+Also, design is a journey of personal growth and discovery. What works for one designer may not resonate with another, and that's perfectly okay. Embrace your unique style and experiment with different approaches to find what suits you best.
