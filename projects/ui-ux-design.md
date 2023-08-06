@@ -117,11 +117,20 @@ Visual tension brings a captivating allure to design. It can be achieved through
 
 Following the above patterns and tricks I successfully launched a couple of responsive web pages to practice my design skills on the web. I worked my way from project briefing, to creating moodboards, wireframes, design and eventually created functional websites.
 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="640" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F92TI04pfbgomMZGzZWCSV7%2FChat-App-Homepage-Design%3Ftype%3Ddesign%26node-id%3D107%253A17%26mode%3Ddesign%26t%3Ddm2DDH6mtvt08TBl-1" allowfullscreen></iframe>
+## 1. Chat App
 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="640" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FCvnCQy0pfc4tVlEB66cgRN%2FTeam-App-Design%3Ftype%3Ddesign%26node-id%3D304%253A210%26mode%3Ddesign%26t%3DOeJqFGzRXXRPF0Pl-1" allowfullscreen></iframe>
+Homepage design concept built for a chat application. The design mockups and high fidelity wireframes were built in Figma and later moved on to build the responsive web page on Webflow.
 
-- [Chat](https://chat-app-homepage.webflow.io/) - Homepage design concept built for a chat application. The design mockups and high fidelity wireframes were built in Figma and later moved on to build the responsive web page on Webflow.
-- [Team](https://team-app-5efacf.webflow.io/) - Website design concept for remote team collaboration. It includes a minimal and powerful blog. Built the website in Webflow, one of the best CMS for blog hosting. Want to collaborate with your team remotely?
+- Link - [Chat](https://chat-app-homepage.webflow.io/)
+
+<img src="/projects/ui-ux-design/Chat.png" alt="Chat App" />
+
+## 2. Team Collaboration App
+
+Website design concept for remote team collaboration. It includes a minimal and powerful blog. Built the website in Webflow, one of the best CMS for blog hosting. Want to collaborate with your team remotely?
+
+- Link [Team](https://team-app-5efacf.webflow.io/)
+
+<img src="/projects/ui-ux-design/Team.png" alt="Team App" />
+
 - [Stopify](https://boro-ui-ux.webflow.io/project/stopify-ecommerce) - Powerful Ecommerce Mobile UI Kit with clean and elegant design. The prototype and micro-interactions are built using Figma. Stopify is the one-stop spot for electronic essentials. Designed to kickstart your e-commerce almost instantly.
-- My [portfolio.](https://boro-ui-ux.webflow.io/)
