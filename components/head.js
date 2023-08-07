@@ -7,12 +7,7 @@ const defaultOgImage =
   'https://raw.githubusercontent.com/Boro23-wq/boro-v5/master/public/og.png'
 const useCurrentPath = () => useRouter().asPath.split('?')[0]
 
-const Head = ({
-  title = 'Sintu Boro',
-  description = "Hi, I'm Boro. Full-stack developer, designer, and tech writer.",
-  image,
-  children
-}) => {
+const Head = ({ title, description, image, children }) => {
   const { systemTheme } = useTheme()
   const path = useCurrentPath()
   const ogImage = image ? image : defaultOgImage
@@ -49,8 +44,11 @@ const Head = ({
       {/* General */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta httpEquiv="Content-Language" content="en" />
+
       <meta name="twitter:card" content="summary_large_image" />
+      <meta property="twitter:domain" content="sdotboro.vercel.app" />
       <meta name="twitter:site" content="@sdotboro" />
+
       <meta name="apple-mobile-web-app-title" content="Sintu" />
       <meta name="author" content="Sintu Boro" />
 
