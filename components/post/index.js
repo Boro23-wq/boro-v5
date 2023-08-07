@@ -33,7 +33,7 @@ const Post = ({
       showHeaderTitle={false}
       image={
         og && og === true
-          ? `https://res.cloudinary.com/doolrgmzd/image/upload/${slug}.png`
+          ? `https://res.cloudinary.com/doolrgmzd/image/upload/v1691429123/blog/${slug}.png`
           : og
       }
     >
