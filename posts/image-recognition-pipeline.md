@@ -7,7 +7,7 @@ description: An image recognition pipeline in AWS, using two parallel EC2 instan
 
 An image recognition pipeline in AWS, using two parallel EC2 instances, S3, SQS, and Rekognition.
 
-<u>Goal</u>: The purpose of this project is to learn how to use the Amazon AWS cloud platform and to develop an AWS application that uses existing cloud services. Specifically, we will learn:
+<b>Goal</b>: The purpose of this project is to learn how to use the Amazon AWS cloud platform and to develop an AWS application that uses existing cloud services. Specifically, we will learn:
 
 1. How to create VMs (EC2 instances) in the cloud.
 2. How to use cloud storage (S3) in your applications.
@@ -15,11 +15,13 @@ An image recognition pipeline in AWS, using two parallel EC2 instances, S3, SQS,
 4. How to program distributed applications in Java on Linux VMs in the cloud, and,
 5. How to use a machine learning service (AWS Rekognition) in the cloud.
 
-<u>Description</u>: We are building an image recognition pipeline in AWS, using two EC2 instances, S3, SQS, and Rekognition. The project is written in Java on Amazon Linux VMs. For the rest of the description, you should refer to the figure below:
+<b>Description</b>: We are building an image recognition pipeline in AWS, using two EC2 instances, S3, SQS, and Rekognition. The project is written in Java on Amazon Linux VMs. For the rest of the description, you should refer to the figure below:
 
 <img src="/blog/image-rec-pipeline/flow-diagram.png" alt="flow diagram" />
 
-We will create two EC2 instances (EC2-A and EC2-B as in the figure), with Amazon Linux AMI, that will work in parallel. Each instance will run a Java application. Instance EC2-A will read 10 images from an S3 bucket (since the S3 bucket was provided by my school I cannot share it in public, but feel free to create an S3 bucket and add 10 images) and performs object detection in the images. When a car is detected using Rekognition, with confidence higher than 90%, the index of that image (e.g., 2.jpg) is stored in SQS. Instance EC2-B reads indexes of images from SQS as soon as these indexes are available in the queue, and performs text recognition on these images (i.e., downloads them from S3 one by one and uses Rekognition for text recognition). Note that the two instances work in parallel: For example, Instance EC2-A is processing image 3, while Instance EC2-B is parallely processing image 1 that was recognized as a car by instance A. When Instance EC2-A terminates its image processing, it adds index -1 to the queue to signal to instance EC2-B that its work has been done. When instance EC2-B finishes, it prints to a file, in its associated EBS, the indexes of the images that have both cars and text, and also prints the actual text in each image next to its index.
+We will create two EC2 instances (EC2-A and EC2-B as in the figure), with Amazon Linux AMI, that will work in parallel. Each instance will run a Java application. Instance EC2-A will read 10 images from an S3 bucket (since the S3 bucket was provided by my school I cannot share it in public, but feel free to create an S3 bucket and add 10 images) and performs object detection in the images. When a car is detected using Rekognition, with confidence higher than 90%, the index of that image (e.g., 2.jpg) is stored in SQS.
+
+Instance EC2-B reads indexes of images from SQS as soon as these indexes are available in the queue, and performs text recognition on these images (i.e., downloads them from S3 one by one and uses Rekognition for text recognition). Note that the two instances work in parallel: For example, Instance EC2-A is processing image 3, while Instance EC2-B is parallely processing image 1 that was recognized as a car by instance A. When Instance EC2-A terminates its image processing, it adds index -1 to the queue to signal to instance EC2-B that its work has been done. When instance EC2-B finishes, it prints to a file, in its associated EBS, the indexes of the images that have both cars and text, and also prints the actual text in each image next to its index.
 
 # Attempted Solution
 
@@ -36,17 +38,17 @@ The following solution was attempted using the AWS account provided by my school
 
 1. Click on Launch instance.
 2. Enter the name of the EC2 instance you want to create.
-3. Under the AMI select <u>Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type</u>.
-4. Select Instance type to be <u>t2.micro</u>. T2 instances are a low-cost, general purpose instance type that provides a baseline level of CPU performance with the ability to burst above the baseline when needed.
-5. Select <u>vockey</u> as a Key-Pair value which should be pre-populated.
+3. Under the AMI select <b>Amazon Linux 2 AMI (HVM) - Kernel 5.10, SSD Volume Type</b>.
+4. Select Instance type to be <b>t2.micro</b>. T2 instances are a low-cost, general purpose instance type that provides a baseline level of CPU performance with the ability to burst above the baseline when needed.
+5. Select <b>vockey</b> as a Key-Pair value which should be pre-populated.
    - Note: You can create your own Key-Pair value with required permissions.
 6. Under Network Settings, select Create security group and check the below settings.
    - [x] Allow SSH traffic from
    - [x] Allow HTTPs traffic from the internet
    - [x] Allow HTTP traffic from the internet
-   - [x] And instead of <u>Anywhere</u>, select <u>My IP</u> to only send traffic from your IP address.
-7. It is recommended to not change settings under <u>Configure storage</u> and <u>Advanced details</u> unless you know what you are doing.
-   <u>Note:</u> You have to follow the above step twice to create two instances. My instances are named <u>EC2-A</u> and <u>EC2-B</u> and looks like this:
+   - [x] And instead of <b>Anywhere</b>, select <b>My IP</b> to only send traffic from your IP address.
+7. It is recommended to not change settings under <b>Configure storage</b> and <b>Advanced details</b> unless you know what you are doing.
+   - <b>Note:</b> You have to follow the above step twice to create two instances. My instances are named <b>EC2-A</b> and <b>EC2-B</b> and looks like this:
 
 ![Running EC2 instances](https://raw.githubusercontent.com/Boro23-wq/AWS-Image-Recognition-Pipeline/master/assets/running-ec2-instances.png)
 
@@ -63,24 +65,24 @@ The following solution was attempted using the AWS account provided by my school
 
 ## Working with the JAVA programs:
 
-1. We will have two different programs, one is to recognize <u>Object</u> and the other is to recognize <u>Text</u> Please read the project description to understand why we need two programs.
+1. We will have two different programs, one is to recognize <u>Object</u> and the other is to recognize <b>Text</b> Please read the project description to understand why we need two programs.
 2. The object detection program will run on the first instance while the second instance will run the text detection program.
 3. Please make sure you have the executable JAR files for each of the programs, as we will upload the JAR files in the instances.
    > In simple words, a _JAR file_ is a file that contains a compressed version of .class files, audio files, image files, or directories.
-4. Once you have the JAR files ready you can upload it to the respective EC2 instances using <u>Cyberduck</u> (Mac) or <u>WinSCP</u> (Windows). I am using Cyberduck for the project since I'm working with a Mac system.
+4. Once you have the JAR files ready you can upload it to the respective EC2 instances using <b>Cyberduck</b> (Mac) or <b>WinSCP</b> (Windows). I am using Cyberduck for the project since I'm working with a Mac system.
    - If you want to learn how to upload file in EC2 instance using Cyberduck, follow the link - [FTP into your EC2-instance with Cyberduck](http://www.brianhoshi.com/blog/how-to-ftp-into-your-ec2-instance-with-cyberduck/)
-   - <u>Note</u> The username while you FTP to your EC2 instance using Cyberduck should be 'ec2-user'.
+   - <b>Note</b> The username while you FTP to your EC2 instance using Cyberduck should be 'ec2-user'.
 
 ## SSH Access from a Mac:
 
 We will now SSH from Mac to access both our EC2 instances.
 
-<u>Note</u>: These instructions are for Mac/Linux users only.
+<b>Note</b>: These instructions are for Mac/Linux users only.
 
 1.  Read through the two bullet points in this step before you start to complete the actions, because you will not be able see these instructions when the AWS Details panel is open.
-    - Choose the <u>AWS Details</u> link above these instructions.
-    - Choose the <u>Download PEM</u> button and save the <u>labsuser.pem</u> file. (Typically your browser will save it to the Downloads directory.)
-2.  Open a terminal window, and change directory `cd` to the directory where the <u>.pem</u> file was downloaded. For example, run this command, if it was saved to your Downloads directory:
+    - Choose the <b>AWS Details</b> link above these instructions.
+    - Choose the <b>Download PEM</b> button and save the <b>labsuser.pem</b> file. (Typically your browser will save it to the Downloads directory.)
+2.  Open a terminal window, and change directory `cd` to the directory where the <b>.pem</b> file was downloaded. For example, run this command, if it was saved to your Downloads directory:
     ```bash
     cd ~/Downloads
     ```
@@ -88,13 +90,13 @@ We will now SSH from Mac to access both our EC2 instances.
     ```shell
     chmod 400 labsuser.pem
     ```
-4.  Return to the AWS Management Console, and in the EC2 service, choose <u>Instances</u>. Check the box next to the instance you want to connect to.
-5.  In the _Description_ tab, copy the <u>IPv4 Public IP</u> value.
-6.  Return to the terminal window and run this command (replace <u>public-ip</u> with the actual public IP address you copied):
+4.  Return to the AWS Management Console, and in the EC2 service, choose <b>Instances</b>. Check the box next to the instance you want to connect to.
+5.  In the <b>Description tab</b>, copy the <b>IPv4 Public IP</b> value.
+6.  Return to the terminal window and run this command (replace <b>public-ip</b> with the actual public IP address you copied):
 
-```bash
-ssh -i <filename>.pem ec2-user@<public-ip>
-```
+    ```bash
+       ssh -i <filename>.pem ec2-user@<public-ip>
+    ```
 
 7.  Type yes when prompted to allow a first connection to this remote SSH server. Because you are using a key pair for authentication, you will not be prompted for a password.
 
@@ -104,12 +106,12 @@ Once we SSH to the two EC2 instances we will have something like this:
 
 ## Run the programs on respective EC2 instance:
 
-1. Make sure to update your <u>access_key</u>, <u>secret_key</u>, and <u>default_region</u> on your AWS terminal.
+1. Make sure to update your <b>access_key</b>, <b>secret_key</b>, and <b>default_region</b> on your AWS terminal.
    - To update the above information, type `aws configure` on the AWS terminal.
-   - The default region should be <u>us-east-1</u>.
+   - The default region should be <b>us-east-1</b>.
 2. Once you are done with the configuration, run the programs using the command `java -jar <NAME_OF_YOUR_JAR_FILE>.jar`.
 3. For the second program since we want to output the result in a text file, we can use the command `java -jar <NAME_OF_YOUR_JAR_FILE>.jar > output.txt`.
-   - An <u>output.txt</u> file will be created and the output of the second program (running on the second instance) will be recorded on the file.
+   - An <b>output.txt</b> file will be created and the output of the second program (running on the second instance) will be recorded on the file.
    - The file will have the necessary data about the indexes of the images that have both cars and text, and also prints the actual text in each image next to its index.
 
 ### Running program on EC2-A instance (First EC2 instance):

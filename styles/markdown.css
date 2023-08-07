@@ -12,11 +12,16 @@ article p {
   color: var(--article-color);
 }
 
+article b {
+  font-weight: 500;
+  color: var(--fg);
+}
+
 article img {
   max-width: 100%;
   width: var(--main-content);
   width: auto;
-  margin: 0.5rem auto;
+  margin: 1rem auto;
   display: block;
   border-radius: var(--radius);
 }
@@ -33,13 +38,24 @@ article [id]::before {
 article ul {
   padding: 0;
   list-style-position: outside;
-  list-style-type: circle;
+  list-style-type: disc;
+  padding-left: 1.65em;
+}
+
+article li {
+  padding-left: 0.375em;
+  margin: 0.35em 0;
+  color: var(--article-color);
+}
+
+article ul li::marker {
+  color: var(--light-gray);
 }
 
 article ol {
   padding: 0;
-  font-weight: 800;
   list-style-position: outside;
+  padding-left: 1.65em;
 }
 
 article ul li.reset {
