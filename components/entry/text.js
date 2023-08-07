@@ -6,7 +6,7 @@ import styles from './text.module.css'
 
 const TextEntry = ({ title, date, year, href, as }) => {
   return (
-    <li className={styles.item}>
+    <div className={styles.item}>
       <Link
         href={href}
         as={as}
@@ -17,7 +17,7 @@ const TextEntry = ({ title, date, year, href, as }) => {
         <p className={cn(styles.title, 'clamp')}>{title}</p>
         <p className={styles.date}>{date}</p>
       </Link>
-    </li>
+    </div>
   )
 }
 
