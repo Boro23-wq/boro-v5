@@ -3,7 +3,7 @@ import getPosts from '@lib/get-posts'
 import renderMarkdown from '@lib/render-markdown'
 
 const PostPage = props => {
-  return <Post {...props} />
+  return <Post {...props} og={true} />
 }
 
 export const getStaticProps = ({ params: { slug } }) => {
