@@ -16,9 +16,9 @@ const Page = ({
   showHeaderTitle = true,
   children
 }) => {
+  const router = useRouter()
   const titlesToRenderHomeLink = ['Blog', 'Social', 'Project', 'Articles', 404]
   const shouldRenderHomeLink = titlesToRenderHomeLink.includes(title)
-  const router = useRouter()
 
   const goTo = route => {
     router.push(route)

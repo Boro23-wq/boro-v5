@@ -2,7 +2,7 @@ import NextHead from 'next/head'
 import { useTheme } from 'next-themes'
 import { useRouter } from 'next/router'
 
-const BASE_URL = `https://boro.im`
+const BASE_URL = `https://sdotboro.vercel.app/`
 const defaultOgImage =
   'https://raw.githubusercontent.com/Boro23-wq/boro-v5/master/public/og.png'
 const useCurrentPath = () => useRouter().asPath.split('?')[0]
@@ -40,7 +40,7 @@ const Head = ({
       <meta name="og:image" content={image} />
 
       {/* URL */}
-      <meta name="og:url" content="https://boro.im" />
+      <meta name="og:url" content="https://sdotboro.vercel.app/" />
       <link key="canonical" rel="canonical" href={BASE_URL + path} />
 
       {/* General */}

@@ -1,4 +1,4 @@
-# [boro.im](https://boro.im)
+# [boro.im](https://sdotboro.vercel.app/)
 
 Personal website and blog. Designed with a focus on minimalism, and UI interactions.
 
