@@ -10,10 +10,11 @@ article > * + * {
 
 article p {
   color: var(--article-color);
+  margin-top: 1.25em;
 }
 
 article b {
-  font-weight: 500;
+  font-weight: 400;
   color: var(--fg);
 }
 

@@ -7,7 +7,7 @@ date: 'July 20, 2023'
 slug: carely
 ---
 
-<u>Note</u>: This project is a piece of a pie me and my team members contributed to during the summer. There were 4-5 different teams including ours, with 4-5 team members on each team that worked on various features of the product.
+<b>Note</b>: This project is a piece of a pie me and my team members contributed to during the summer. There were 4-5 different teams including ours, with 4-5 team members on each team that worked on various features of the product.
 
 ## Overview
 
@@ -53,17 +53,17 @@ A solution that drives the optimization of every facet of documenting components
 
 ## Basic requirements for persona description
 
-1. <u>Background information</u> - Customer’s circumstances and conditions.
-2. <u>Reason statement</u> - The purpose of the interview/meeting.
-3. <u>Observation statement</u> - Differentiate one customer from another (Objective - facts).
-4. <u>Content statement</u> - Key events.
-5. <u>Results statement</u> - Evaluation of the meeting in relation to the purpose.
-   a. Should disclose if purpose was achieved or not.
-6. <u>Impression statement</u> - Links case manager’s plan.
-7. <u>Plan statement</u> - should include next steps assignment.
-   a. Should include the next meeting date.
-   b. Connected to Immediate Plan (IP).
-   c. Include reasons for the next meeting.
+1. <b>Background information</b> - Customer’s circumstances and conditions.
+2. <b>Reason statement</b> - The purpose of the interview/meeting.
+3. <b>Observation statement</b> - Differentiate one customer from another (Objective - facts).
+4. <b>Content statement</b> - Key events.
+5. <b>Results statement</b> - Evaluation of the meeting in relation to the purpose.
+   - Should disclose if purpose was achieved or not.
+6. <b>Impression statement</b> - Links case manager’s plan.
+7. <b>Plan statement</b> - should include next steps assignment.
+   - Should include the next meeting date.
+   - Connected to Immediate Plan (IP).
+   - Include reasons for the next meeting.
 
 ## Example - User Persona
 
@@ -84,14 +84,27 @@ A solution that drives the optimization of every facet of documenting components
 ## User stories considered
 
 1. As an admin:
-   a. I should be able to create, and manage case managers, so that I can assure appropriate medical care for the patients.
+
+   - I should be able to create, and manage case managers, so that I can assure appropriate medical care for the patients.
 
 2. As a case manager
-   a. I should be able to create, and manage a case, so that I can retrieve a clients’ case information and case history on demand.
-   b. I should be able to attach top-level categories to a case, so that it is easier to retrieve cases based on the category.
-   c. I should be able to attach severity definitions to the case, so that volatile cases can be monitored closely.
-   d. I should be able to implement a dedicated client plan, so that the efficacy of a plan can be closely monitored.
-   e. I should be able to create a case note, on any of my cases, so that I can retrieve notes in the future while dealing with a case.
+   - I should be able to create, and manage a case, so that I can retrieve a clients’ case information and case history on demand.
+   - I should be able to attach top-level categories to a case, so that it is easier to retrieve cases based on the category.
+   - I should be able to attach severity definitions to the case, so that volatile cases can be monitored closely.
+   - I should be able to implement a dedicated client plan, so that the efficacy of a plan can be closely monitored.
+   - I should be able to create a case note, on any of my cases, so that I can retrieve notes in the future while dealing with a case.
+
+In addition, we have formulated specific acceptance criteria for each user story. For example:
+
+## User story
+
+As a case manager, I should be able to upload my profile picture, so that I can display my image on my profile.
+
+## Acceptance Criteria
+
+- A user should not be able to upload if the upload file is missing.
+- A user should only be able to upload file size < 1 MB.
+- A user should be able to only upload image MIME types (png, jpeg, jpg, etc.).
 
 ## Case manager persona ERD
 
