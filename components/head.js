@@ -10,11 +10,12 @@ const useCurrentPath = () => useRouter().asPath.split('?')[0]
 const Head = ({
   title = 'Sintu Boro',
   description = "Hi, I'm Boro. Full-stack developer, designer, and tech writer.",
-  image = defaultOgImage,
+  image,
   children
 }) => {
   const { systemTheme } = useTheme()
   const path = useCurrentPath()
+  const ogImage = image ? image : defaultOgImage
 
   return (
     <NextHead>
@@ -36,8 +37,10 @@ const Head = ({
       <meta name="og:description" content={description} />
 
       {/* Image */}
-      <meta name="twitter:image" content={image} />
-      <meta name="og:image" content={image} />
+      <meta name="twitter:image" content={ogImage} />
+      <meta name="linkedin:image" content={ogImage} />
+      <meta name="facebook:image" content={ogImage} />
+      <meta name="og:image" content={ogImage} />
 
       {/* URL */}
       <meta name="og:url" content="https://sdotboro.vercel.app/" />
