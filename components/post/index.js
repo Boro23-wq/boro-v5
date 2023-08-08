@@ -2,6 +2,7 @@ import Head from 'next/head'
 
 import Navigation from './navigation'
 import Page from '@components/page'
+
 import styles from './post.module.css'
 
 function escapeHtml(unsafe) {

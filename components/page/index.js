@@ -10,6 +10,7 @@ import styles from './page.module.css'
 const Page = ({
   header = true,
   footer = true,
+  slug,
   title,
   description,
   image,
@@ -32,6 +33,7 @@ const Page = ({
         title={`${title ? `${title} - ` : ''}Boro`}
         description={description}
         image={image}
+        slug={slug}
       />
 
       {header && <Header title={title !== 'Home' && title} />}
