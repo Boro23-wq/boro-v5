@@ -44,24 +44,22 @@ const Link = ({
     )
   }
 
-  return (
-    <>
-      <NextLink
-        href={href}
-        as={as}
-        prefetch={canPrefetch(href) ? undefined : false}
-        passHref={passHref}
-      >
-        {passHref ? (
-          children
-        ) : (
-          <a className={c} {...props}>
-            {children}
-          </a>
-        )}
-      </NextLink>
-    </>
-  )
+  return <>
+    <NextLink
+      href={href}
+      as={as}
+      prefetch={canPrefetch(href) ? undefined : false}
+      passHref={passHref}
+      legacyBehavior>
+      {passHref ? (
+        children
+      ) : (
+        <a className={c} {...props}>
+          {children}
+        </a>
+      )}
+    </NextLink>
+  </>;
 }
 
 Link.displayName = 'Link'

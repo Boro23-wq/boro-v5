@@ -11,17 +11,17 @@ const Header = ({ title, content }) => {
     <nav className={styles.nav}>
       <div className={styles.header}>
         <div className={styles.container}>
-          <Link href="/">
-            <a aria-label="Home" className={styles.logo}>
-              <LogoIcon />
-            </a>
+          <Link href="/" aria-label="Home" className={styles.logo}>
+
+            <LogoIcon />
+
           </Link>
           <Command />
           {title && <div className={styles.content}>{title}</div>}
         </div>
       </div>
     </nav>
-  )
+  );
 }
 
 Header.displayName = 'Header'
