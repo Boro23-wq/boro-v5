@@ -1,4 +1,3 @@
-import React from 'react'
 import Router from 'next/router'
 import App from 'next/app'
 import nprogress from 'nprogress'

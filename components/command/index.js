@@ -25,10 +25,9 @@ import {
 import { Command as CommandIcon } from '@components/icons'
 
 import tinykeys from '@lib/tinykeys'
-import useData from '@lib/use-data'
 import postMeta from '@data/blog.json'
 import projectMeta from '@data/project.json'
-import { data } from '@data/article.json'
+import articleMetaAndSchema from '@data/article.json'
 
 import styles from './command.module.css'
 import headerStyles from '@components/header/header.module.css'
@@ -235,9 +234,9 @@ const ProjectItems = () => {
 
 const ArticleItems = () => {
   const router = useRouter()
-  const { items } = useData(data)
+  const articleMeta = articleMetaAndSchema.data
 
-  return items.map((article, i) => {
+  return articleMeta.map((article, i) => {
     return (
       <Item
         key={`article-item-${article.title}-${i}`}

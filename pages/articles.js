@@ -2,12 +2,10 @@ import Page from '@components/page'
 import ArticleEntry from '@components/entry/article'
 
 // Data
-import useData from '@lib/use-data'
-import { data } from '@data/article.json'
+import articleMetaAndSchema from '@data/article.json'
 
 const Reading = () => {
-  const { items } = useData(data)
-  // const keySet = new Set(data.map(item => item.key))
+  const items = articleMetaAndSchema.data
 
   return (
     <Page
