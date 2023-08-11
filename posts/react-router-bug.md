@@ -5,28 +5,29 @@ slug: react-router-bug
 description: React-router got me agitated indefinitiely. Problem with history and react-router versioning.
 ---
 
-I had tried to solve a severe bug (for several weeks FYI), which eventually comprehended to be a really stupid missing piece that delayed my moment of exaltation pretty much for 3 weeks to be precise.
+## Introduction:
 
-Do you know what the best part is? It wasn't just me who was perplexed with this bug, but a few others that had spent a great amount of time in scrutiny.
+Ever been stuck on a pesky bug that seemed impossible to crack? I sure have. Let me share my journey of tackling a tricky bug that kept me scratching my head for weeks. The good news? It turned out to be a simple solution that I missed for way too long. So, let's dive in and see how I finally conquered this coding conundrum.
 
-The bug was with the `react-router` package. If you want to reproduce the bug and try it yourself or want to check out the community discussion you can visit the link below.
+Imagine this – a tiny piece of code caused a major headache that lasted for weeks. And guess what? I wasn't alone in this struggle. A bunch of us were baffled by the same bug, spending hours trying to figure it out.
+
+So, who's the troublemaker? It's none other than the `react-router` package. If you're curious to recreate the bug or want to check out what others have said about it, you can find the link below.
 
 - [history.push not re-rendering component.](https://github.com/ReactTraining/react-router/issues/7415)
 
-## What was the bug all about?
+## The Bug Story:
 
-Well here's the gist. Let us imagine we have two components, `CreateProduct` and `AllProducts`. The CreateProduct component essentially creates a Product (through react form) and sends a POST request to the backend API for persistent storage. It then uses history props passed in tacitly by react-router to route to the AllProducts page. The AllProducts page lists out all the products that have been created.
+Let's break it down. We have two components: `CreateProduct` and `AllProducts`. The first component helps us create new products and sends them to a server. Then, it's the job of our second component to show all the products on a page.
 
-But the problem was that when we redirected to the AllProducts page from CreateProduct, the most recent item that was created didn't show up until hard reload. I believe it was probably a case of local mutation. But to sum up:
+But here's the twist – when we switched from creating a product to viewing all products, the new product didn't show up right away. We had to refresh the page to see it. Sounds frustrating, right? It's like the page forgot to show the new item until we gave it a little nudge.
 
-- The bug was that `history.push` redirected me to the desired page but wasn't re-rendering the component with the new data.
-- And, it required a subsequent hard refresh for the new data to be rendered on the page.
+## The Clue: A Tricky Component:
 
-## Components
+Enter our key player – the `AllProducts` component. It had a special power called `useEffect`. This power helped it fetch new data and update the page. But guess what? It wasn't working as expected.
 
-The AllProducts component had a `useEffect` hook that ran but couldn't find any new data and hence it wasn't re-rendering the component.
+Check out this piece of code:
 
-```javascript
+```jsx title=AllProducts.js
 const AllProducts = () => {
   const [products, setProducts] = useState(null);
 
@@ -36,25 +37,9 @@ const AllProducts = () => {
   }, []);
 ```
 
-Below I have attached a code snippet of the CreateProduct component. This is where we made a POST request to the backend API for storing the data, and as you can see we have a history.push method right in the .then promise chain.
+## The Hunt for Answers:
 
-```javascript
-    axios
-      .post(api, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      })
-      .then(() => {
-        history.push('/allproducts');
-      })
-  };
-
-```
-
-## Possible Solutions
-
-If you have made us of the history npm package for session storage, a possible solution could be looking to install a particular version of history compatible with react-router as mentioned below.
+With my detective hat on, I tried different things. Some folks suggested changing the version of a package called history. Others said we should wrap a certain piece of code in useEffect.
 
 ```bash
 $ npm list history
@@ -69,19 +54,13 @@ npm list v1.13.0
 $ npm i history@4.10.1
 ```
 
-A few of them in the community suggested that using `history@4.10.1` with `react-router-dom@5.2.0` happens to solve the issue.
+But here's the truth – none of those solutions worked for me. I was hitting dead ends left and right.
 
-And a few other suggests that to prevent calling `history.push` on render we can wrap it around useEffect hook.
+## The Eureka Moment: Finding the fix:
 
-Unfortunately, none of them worked for me. I relentlessly tried every single fix that might budge the bug down but that certainly didn't happen.
+Finally, after a lot of trial and error, I stumbled upon something. In the React Docs, I discovered that useEffect had a secret trick. I could tell it to pay attention only when certain things changed. And that's when things clicked.
 
-## What worked for me? The Fix.
-
-We have the same AllProducts component here. The [React Docs](https://reactjs.org/docs/hooks-effect.html) suggested that useEffect hook API accepts a second argument.
-
-> You can tell React to skip applying an effect if certain values haven’t changed between re-renders. To do so, pass an array as an optional second argument to useEffect.
-
-```javascript
+```jsx title=AllProducts.js highlight=7
 const AllProducts = () => {
   const [products, setProducts] = useState(null);
 
@@ -91,22 +70,27 @@ const AllProducts = () => {
   }, []);
 ```
 
-We pass an empty array as a second argument for React to re-render only when the value changes or a new data is added. It turns out I didn't pass the products list inside the useEffect hook as a second parameter and React knew nothing about new data being drilled until the hard refresh.
-
-And right after I passed the products inside the useEffect like so
-
-```javascript
+```jsx title=AllProducts.js highlight=7
 const AllProducts = () => {
-  const [products, setProducts] = useState(null);
+  const [products, setProducts] = useState(null)
 
   useEffect(() => {
-    fetchData();
-    setLoading(false);
-  }, [products]);
+    fetchData()
+    setLoading(false)
+  }, [products])
+}
 ```
 
-everything worked out as normal and the AllProducts component was now re-rendering and was updating the stale data with the new data.
+## What We Missed:
 
-Welp! That was probably a word that I missed and the world was falling apart. I very rightly know that it was a ingenuous missing piece on my part and it took me atleast a couple weeks to figure it out, but you know what, that's what coding teaches you. It taught me to be reselient and learn something the hard way.
+I realized I missed something important. I forgot to tell `useEffect` about the new products. So, React didn't know it needed to update the page. No wonder I had to refresh to see the changes!
 
-Happy Coding!
+With this small tweak, the `AllProducts` component woke up. It started showing new data without needing a push.
+
+## Lessons Learned:
+
+This bug taught me something valuable. Even the tiniest detail can make a big difference in coding. It's like solving a puzzle – sometimes the missing piece is right in front of you. And you know what? This experience made me better at coding. It taught me to stay patient and keep learning, even when things get tough.
+
+## Conclusion:
+
+So, there you have it. My bug-hunting adventure that turned out to be a lesson in persistence. Coding is like a journey, full of surprises and challenges. With the right mindset, you can overcome anything. Happy coding!

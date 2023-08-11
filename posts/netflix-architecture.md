@@ -3,8 +3,9 @@ title: How Netflix - a popular media streaming service onboards and delivers its
 date: 'December 03, 2021'
 slug: netflix-architecture
 description: We try to design a system much like Netflix that would scale to millions of users worldwide and talk through possible architectures and microservices that can help deliver an online streaming service.
-# blog: ['/blog/netflix-architecture/cover.png']
 ---
+
+<img src="/blog/netflix-architecture/cover.png" alt="metadata" />
 
 Netflix launched its online streaming service in 2007 and has predominantly been the primary streaming service consumed by millions of users worldwide ever since. They have pretty much shaped the "media-streaming revolution", with over 100 million paid subscribers in no time. Massive! I was curious about its architecture and microservices like most of y'all and just hopped onto reading blogs and articles to understand how they manage to scale to serve millions of users. So here I am trying to explain just a bit of what I know about Netflix and the system behind the very sought-after streaming service.
 
@@ -35,7 +36,7 @@ Netflix has a few different domain-specific microservices running concurrently t
 
 ```bash
 Total servers in playback microservice =
-    (playback_queries/sec * latency) / (concurrent_connections per server)
+(playback_queries/sec * latency) / (concurrent_connections per server)
 ```
 
 Assuming that the latency to reply to each and every playback query is 20 ms. Additionally, we also estimate that a server can only handle 10K concurrent connections at a time. Now, imagine we have a surge of playback queries at the same time. In that case, the system should be able to handle queries of at least 75–80% of the total active users. Having all of that into consideration we would require a total of `(110M * 20ms / 10K = 220)` (220) servers that would just handle playback queries.
@@ -102,7 +103,7 @@ Query Params: {
 
 We require various tables to persist data such as user data, profile data, subscriptions data, and so on and so forth. Since for the scope of our system, we are only dealing with videos and their metadata we need to have some kind of data model to store the metadata of the videos. We can make use of a document-based store like MongoDB to store this information. The data-model is for storing video meta-data is demonstrated below.
 
-<img src="/blog/netflix-architecture/video-metadata.png" alt="metadata" />
+<img width='300px' height='300px' src="/blog/netflix-architecture/video-metadata.png" alt="metadata" />
 
 We also have another requirement of storing subtitles for the videos. We can make use of some sort of OpenTSDB to store the subtitles. OpenTSDB databases are great for storing and serving massive amounts of time-series data. Below we have demonstrated an event-driven model where each event occupies a timestamp of the video timeline.
 
