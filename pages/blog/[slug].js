@@ -6,7 +6,7 @@ const PostPage = props => {
   return <Post {...props} og={true} />
 }
 
-export const getStaticProps = ({ params: { slug } }) => {
+export const getStaticProps = async ({ params: { slug } }) => {
   const posts = getPosts()
   const postIndex = posts.findIndex(p => p.slug === slug)
   const post = posts[postIndex]

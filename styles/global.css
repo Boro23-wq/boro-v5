@@ -76,12 +76,13 @@
   --hr: #303030;
 
   /* Syntax Highlighting */
+  --code-head: #161616;
   --token: #999;
   --comment: #999;
   --keyword: #fff;
   --name: #ff006a;
   --classname: var(--fg);
-  --highlight: #2e2e2e;
+  --highlight: #303030;
 }
 
 [data-theme='light'] {
@@ -101,6 +102,7 @@
   --hr: #eaeaea;
 
   /* Syntax Highlighting */
+  --code-head: #f0f0f0;
   --token: #666;
   --comment: #999;
   --keyword: var(--fg);

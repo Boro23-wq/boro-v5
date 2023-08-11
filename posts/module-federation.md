@@ -90,11 +90,7 @@ Once we have all of our packages installed, we now need to create a config file 
 
 Go ahead and paste the code below inside the `next.config.js` file. All this config does is, require the module-federation npm package and helps us expose the consumable component inside the "exposes" object.
 
-<!-- // ```js{15}:next.config.js -->
-
-<!-- ```js:next.config.js -->
-
-```js
+```jsx title=next.config.js highlight=15
 const {
   withModuleFederation,
   MergeRuntime
@@ -131,11 +127,7 @@ After we are done with the config file, we now need to include a custom document
 
 Copy the code below into the `_document.js` file. The file will enable `patchSharing()` which will help us share some part of the code with some other application.
 
-<!-- ```js{13}:_document.js -->
-
-<!-- ```js:_document.js -->
-
-```js
+```jsx title=_document.js highlight=13
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { patchSharing } from '@module-federation/nextjs-mf'
 
@@ -166,9 +158,7 @@ Now the next step is to actually create the component that we will share with an
 
 Now go ahead and copy the following code inside the Header component that we just built:
 
-<!-- ```js:components/Header.jsx -->
-
-```js
+```jsx title=components/Header.jsx
 const Header = () => (
   <div
     style={{
@@ -190,9 +180,7 @@ export default Header
 
 The only way to show up this component on our application is to import it inside the index.js file which is the entry point of our Next.js application. Go ahead and import the component like so:
 
-<!-- ```js:index.js -->
-
-```js
+```js title=index.js
 import Head from 'next/head'
 
 const Header = (await import('home/Header')).default
@@ -221,9 +209,7 @@ const Home = () => (
 
 We have one more step before we can create our second application. We need to export the `Header.jsx` component inside the "exposes" object that we defined earlier inside the `next.config.js` file.
 
-<!-- ```js:next.config.js -->
-
-```js
+```js title=next.config.js
 module.exports = {
       exposes: {
         "./Header": "./components/Header",
@@ -253,11 +239,7 @@ nextjs-mf upgrade -p 3001
 
 The above command will upgrade the port to 3001 (to avoid port clashes) and it will automatically scaffold the `next.config.js` file for you. All you need to do is uncomment out whatever is in the "remotes" object with the key set to home (or whatever the name of your first application is). The file will look something like this:
 
-<!-- ```js{4}:next.config.js -->
-
-<!-- ```js:next.config.js -->
-
-```js
+```jsx title=next.config.js highlight=4
 module.exports = {
   webpack: (config, options) => {
     // additional config
@@ -273,11 +255,7 @@ module.exports = {
 
 Notice you will also have a `_document.js` inside the pages directory. Uncomment the script tag within the render method. The script tag is a special entry point (a few KB's in size). They contain a special webpack runtime that can interface with the host (or home in our case).
 
-<!-- ```js{10}:index.js -->
-
-<!-- ```js:index.js -->
-
-```js
+```jsx title=index.js highlight=10
 const Header = (await import('home/Header')).default
 
 const Home = () => (
